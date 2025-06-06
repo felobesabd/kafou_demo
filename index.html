@@ -585,18 +585,23 @@
     @media (max-width: 768px) {
       .dribbble-section {
         flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
       }
 
       .dribbble-section .text-content {
         width: 100%;
-        padding: 80px 20px 40px 20px;
+        padding: 100px 20px 40px 20px;
+        min-height: auto;
       }
 
       .dribbble-section .media-content {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 20px 40px 20px;
         grid-template-columns: 1fr;
         gap: 20px;
+        height: auto;
       }
 
       .icon_box {
@@ -605,6 +610,7 @@
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        height: auto;
       }
 
       .icon_box .icon {
