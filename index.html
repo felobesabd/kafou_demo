@@ -11,624 +11,9 @@
   <!-- Font Awesome for icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Custom Scrollbar Styles */
-    ::-webkit-scrollbar {
-      width: 10px;
-      -webkit-appearance: none;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: transparent;
-      border-radius: 0;
-      border: 6px solid transparent;
-      background-clip: padding-box;
-      min-height: 50px;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: transparent;
-      border: 6px solid transparent;
-      background-clip: padding-box;
-    }
-
-    /* For Firefox and mobile */
-    * {
-      scrollbar-width: inherit;
-      scrollbar-color: green transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    html {
-      overflow-y: scroll;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    html, body {
-      height: 100%;
-      overflow: auto;
-      background: #000;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    }
-
-    /* Header Styles */
-    header {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 2000;
-      padding: 20px 50px;
-      background: transparent;
-    }
-
-    .layout-root {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 2000;
-    }
-
-    .logo-link-header {
-      display: flex;
-      align-items: center;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .logo-icon {
-      width: 150px;
-      height: 40px;
-      background: white;
-      color: #667eea;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      margin-right: 12px;
-    }
-
-    .categories-btn {
-      border: none;
-      outline: none;
-      background: none;
-      color: white;
-      padding: 12px 20px;
-      font-size: 20px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 2000;
-    }
-
-    .menu-toggle {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-      margin-left: 20px;
-      position: relative;
-      z-index: 2000;
-    }
-
-    .header-divider {
-      width: 1px;
-      height: 30px;
-      background: white;
-      margin: 0 15px;
-    }
-
-    /* Navigation Styles */
-    .navigation-root {
-      position: fixed;
-      top: 0;
-      right: -400px;
-      width: 400px;
-      height: 100vh;
-      z-index: 2000;
-      transition: right 0.3s ease;
-    }
-
-    .navigation-root.active {
-      right: 0;
-    }
-
-    .navigation-root.active ~ body {
-      overflow: hidden;
-    }
-
-    .navigation-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .navigation-nav {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: white;
-      box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-      overflow: hidden;
-    }
-
-    .sidebar-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .sidebar-close {
-      background: none;
-      border: none;
-      font-size: 18px;
-      cursor: pointer;
-      color: #666;
-    }
-
-    .main-content {
-      padding: 30px;
-    }
-
-    .menu-block ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .menu-block li {
-      margin-bottom: 15px;
-    }
-
-    .menu-block a {
-      color: #333;
-      text-decoration: none;
-      font-size: 16px;
-      display: block;
-      padding: 10px 0;
-      transition: color 0.3s ease;
-    }
-
-    .menu-block a:hover {
-      color: #667eea;
-    }
-
-    .menu-secondary {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid #eee;
-    }
-
-    .offices {
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top: 1px solid #eee;
-    }
-
-    .city {
-      color: #667eea;
-      text-decoration: none;
-      font-style: normal;
-    }
-
-    /* Main Content */
-    .main-section {
-      height: 100vh !important;
-      min-height: 100vh;
-      color: white;
-      z-index: 1;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .fullscreen-section {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 0 60px 100px 60px;
-    }
-
-    .fullscreen-section video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .fullscreen-section .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      z-index: -1;
-    }
-
-    /* Split Section Styles (Second Section) */
-    .split-section {
-      display: flex;
-      padding: 0;
-      height: 100vh;
-    }
-
-    .split-section .text-content {
-      width: 50%;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: #f5f5f5;
-      color: #000;
-    }
-
-    .split-section .media-content {
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-    }
-
-    /* Red Section Styles (Third Section) */
-    .red-split-section {
-      display: flex;
-      padding: 0;
-      height: 100vh;
-    }
-
-    .red-split-section .text-content {
-      width: 50%;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background: white;
-      color: #000;
-    }
-
-    .red-split-section .media-content-red {
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-      background-color: green;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .red-split-section .media-content-red img {
-      width: 200px;
-      height: auto;
-    }
-
-    .split-section video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .main-title {
-      font-size: 26px;
-      font-weight: 300;
-      line-height: 40px;
-      margin-bottom: 20px;
-      max-width: 600px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .section-title {
-      font-size: 48px;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 30px;
-    }
-
-    .section-description {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #666;
-      margin-bottom: 30px;
-      max-width: 500px;
-    }
-
-    .cta-button {
-      background: transparent;
-      border: 2px solid green;
-      color: white;
-      width: fit-content;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-      font-weight: 600;
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta-button:hover {
-      background: green;
-      color: white;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .class-d-none {
-        display: none;
-      }
-
-      header {
-        padding: 15px 20px;
-      }
-
-      .navigation-root {
-        width: 100%;
-        right: -100%;
-      }
-
-      .fullscreen-section {
-        padding: 20px;
-        padding-bottom: 80px;
-      }
-
-      .split-section {
-        flex-direction: column;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .split-section .text-content {
-        width: 100%;
-        height: 50%;
-        padding: 20px;
-      }
-
-      .split-section .media-content {
-        width: 100%;
-        height: 50%;
-      }
-
-      /* Mobile styles for red section */
-      .red-split-section {
-        flex-direction: column;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .red-split-section .text-content {
-        display: none;
-      }
-
-      .red-split-section .media-content-red {
-        width: 100%;
-        height: 100%;
-        padding: 40px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-      }
-
-      .red-split-section .mobile-text {
-        color: white;
-        text-align: left;
-      }
-
-      .red-split-section .mobile-text .section-title {
-        color: white;
-        font-size: 32px;
-        line-height: 1.2;
-        margin-bottom: 20px;
-      }
-
-      .red-split-section .mobile-text .section-description {
-        color: white;
-        font-size: 16px;
-        line-height: 1.5;
-        margin-bottom: 20px;
-      }
-
-      .section-title {
-        font-size: 24px;
-        margin-bottom: 15px;
-        line-height: 1.2;
-      }
-
-      .section-description {
-        font-size: 14px;
-        line-height: 1.4;
-        margin-bottom: 20px;
-        color: #666;
-      }
-
-      .categories-btn {
-        display: none;
-      }
-    }
-
-    /* Additional mobile optimization */
-    @media (max-width: 480px) {
-      .red-split-section .media-content-red {
-        padding: 30px 20px;
-      }
-
-      .red-split-section .mobile-text .section-title {
-        font-size: 28px;
-      }
-
-      .red-split-section .mobile-text .section-description {
-        font-size: 14px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .red-split-section .media-content-red img {
-        width: 200px;
-        margin-top: 50px;
-        margin-bottom: 30px;
-      }
-    }
-
-    /* Dribbble Section Styles */
-    .dribbble-section {
-      display: flex;
-      padding: 0;
-      height: 100vh;
-      background: #f5f5f5;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dribbble-section .text-content {
-      width: 40%;
-      padding: 60px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #000;
-    }
-
-    .dribbble-section .media-content {
-      width: 60%;
-      position: relative;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      align-content: center;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .icon_box {
-      text-align: center;
-      padding: 20px;
-      transition: all 0.3s ease;
-      background: white;
-      border-radius: 8px;
-      height: 100%;
-    }
-
-    .icon_box a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .icon_box .icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-      color: green;
-    }
-
-    .icon_box h4 {
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #000;
-      font-weight: 600;
-    }
-
-    .icon_box .desc_wrapper {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .class-d-none {
-        display: none;
-      }
-
-      .dribbble-section {
-        flex-direction: column;
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      .dribbble-section .text-content {
-        width: 100%;
-        padding: 80px 20px 30px 20px;
-      }
-
-      .dribbble-section .media-content {
-        width: 100%;
-        padding: 0 20px 20px 20px;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        height: auto;
-        overflow: hidden;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .dribbble-section .text-content {
-        padding: 80px 20px 30px 20px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .dribbble-section .text-content {
-        padding: 80px 20px 30px 20px;
-      }
-    }
-
-    /* Change menu color to black when the last section is in view */
-    .dribbble-section.active ~ header .categories-btn,
-    .dribbble-section.active ~ header .menu-toggle {
-      color: black;
-    }
-  </style>
+  <link href="assets/css/main.css" rel="stylesheet">
 </head>
 <body>
-
   <header id="Header">
     <div class="layout-root">
       <!-- Navigation Menu -->
@@ -907,6 +292,82 @@
     </div>
   </div>
 
+  <!-- Footer Section -->
+  <div class="scrollify main-section footer-wrapper">
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <!-- Logo Column -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo-wrapper">
+              <img src="assets/images/kafou-logo.png" alt="Kafou Medical Logo" class="footer-logo">
+            </div>
+          </div>
+
+          <!-- Kafou Medical Column -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-column">
+              <h3>Kafou Medical</h3>
+              <div class="about-text">
+                <p>Why Kafou Medical?</p>
+                <p>We are a medical sales & marketing company, part of Kafou Group based in Riyadh, Saudi Arabia</p>
+              </div>
+              <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kafou Group Column -->
+          <div class="col-lg-3 col-md-6 class-d-none">
+            <div class="footer-column">
+              <h3>Kafou Group</h3>
+              <ul class="footer-links">
+                <li><a href="#">Kafou Commercial Investment Co.</a></li>
+                <li><a href="#">Our Partners</a></li>
+                <li><a href="#">Our Clients</a></li>
+                <li><a href="#">Join Our Team</a></li>
+                <li><a href="#">Job Openings</a></li>
+                <li><a href="#">Direct Apply</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Contact Information Column -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-column">
+              <h3>Contact Information</h3>
+              <ul class="contact-info">
+                <li>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span>7492 Abi Bakr As Siddiq Rd. Riyadh 13316-4305</span>
+                </li>
+                <li>
+                  <i class="fas fa-phone"></i>
+                  <a href="#">+966 11 203 4571</a>
+                </li>
+                <li>
+                  <i class="fas fa-envelope"></i>
+                  <a href="#">info@kafoumedical.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            © 2025 Kafou Medical - All Rights Reserved Made with <i class="fas fa-heart" style="color: white;"></i> in KSA
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.21/jquery.scrollify.min.js"></script>
@@ -965,18 +426,51 @@
         scrollbars: true,
         standardScrollElements: "",
         setHeights: true,
-        overflowScroll: false,
+        overflowScroll: true,
         updateHash: false,
         touchScroll: true,
         before: function(index, sections) {
+          // Add active class to current section
           $(sections[index]).addClass('active').siblings().removeClass('active');
+          
+          // Handle header background and button colors
+          const $header        = $('header');
+          const $categoriesBtn = $('.categories-btn');
+          const $menuToggle    = $('.menu-toggle');
+          const $headerDriver  = $('.header-divider');
+
+          if ($(sections[index]).hasClass('dribbble-section')) {
+            // $header.addClass('dark-bg');
+            $categoriesBtn.addClass('dark-color');
+            $menuToggle.addClass('dark-color');
+            $headerDriver.addClass('dark-color');
+          } else {
+            // $header.removeClass('dark-bg');
+            $categoriesBtn.removeClass('dark-color');
+            $menuToggle.removeClass('dark-color');
+            $headerDriver.removeClass('dark-color');
+          }
         },
         after: function() {},
         afterResize: function() {
           $.scrollify.update();
         },
         afterRender: function() {
+          // Add active class to first section on load
           $('.scrollify').first().addClass('active');
+          
+          // Check initial section for header styling
+          const $currentSection = $('.scrollify.active');
+          const $header = $('header');
+          const $categoriesBtn = $('.categories-btn');
+          const $menuToggle = $('.menu-toggle');
+          
+          if ($currentSection.hasClass('footer-wrapper') || $currentSection.hasClass('dribbble-section')) {
+            $header.addClass('dark-bg');
+            $categoriesBtn.addClass('dark-color');
+            $menuToggle.addClass('dark-color');
+          }
+          
           $.scrollify.update();
         }
       });
