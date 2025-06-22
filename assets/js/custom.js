@@ -64,7 +64,7 @@ $(document).ready(function() {
             const $headerDriver  = $('.header-divider');
             const $logoImg       = $('#main-logo');
 
-            if ($(sections[index]).hasClass('dribbble-section')) {
+            if ($(sections[index]).hasClass('dribbble-section') || $(sections[index]).hasClass('why-split-section')) {
                 $categoriesBtn.addClass('dark-color');
                 $menuToggle.addClass('dark-color');
                 $headerDriver.addClass('dark-color');
