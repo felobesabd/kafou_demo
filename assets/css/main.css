@@ -485,6 +485,10 @@ body.menu-open {
         padding: 20px;
     }
 
+    .why-kafou-page .split-section .media-content{
+        height: 35%;
+    }
+
     .split-section .text-content .section-title {
         font-size: 20px;
         margin-top: 20px;
