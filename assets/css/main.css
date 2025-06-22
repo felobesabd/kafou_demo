@@ -463,16 +463,16 @@ body.menu-open {
     .why-kafou-page .split-section .text-content {
         width: 100%;
         flex-grow: 1;
-        padding: 24px;
+        padding: 20px;
     }
 
     .why-kafou-page .split-section .section-title {
-        font-size: 20px !important;
+        font-size: 15px !important;
     }
 
     .why-kafou-page .split-section .section-description {
-        font-size: 14px;
-        line-height: 1.1;
+        font-size: 12px;
+        line-height: 1;
     }
 
     .class-d-none {
