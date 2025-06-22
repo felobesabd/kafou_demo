@@ -900,7 +900,7 @@ body.menu-open {
     }
 
     .footer-section {
-        padding: 60px 0 20px;
+        padding: 0 0 20px;
     }
 
     .footer-content {
@@ -913,13 +913,13 @@ body.menu-open {
     }
 
     .footer-logo-wrapper {
-        margin-top: 0;
+        margin-top: -80px;
     }
 }
 
 @media (max-width: 576px) {
     .footer-section {
-        padding: 45px 15px 15px;
+        padding: 0 15px 15px;
     }
 }
 
