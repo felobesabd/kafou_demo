@@ -2140,7 +2140,7 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
 
     .carousel-text {
         text-align: center;
-        padding: 20px 0;
+        padding: 60px 0;
     }
 
     .carousel-title {
@@ -2415,5 +2415,277 @@ main#main-carousel-partners .item-carousel img {
         width: 160px;
         height: 160px;
         transform: rotateY(calc(-3deg * var(--r))) translateX(calc(-60px * var(--r))) translateZ(calc(-15px * var(--abs)));
+    }
+}
+
+/* main-carousel-vertically */
+main#main-carousel-vertically {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    --items: 5;
+    --middle: 3;
+    --position: 3;
+}
+
+main#main-carousel-vertically .item-carousel {
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    width: 280px;
+    height: 250px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transform: rotateX(calc(20deg * var(--r))) translateY(calc(-150px * var(--r))) translateZ(calc(-50px * var(--abs)));
+    z-index: calc(10 - var(--abs));
+    opacity: calc(1 - (var(--abs) * 0.2));
+}
+
+/* Responsive adjustments for vertical carousel */
+@media (min-width: 769px) {
+    main#main-carousel-vertically .carousel-container {
+        height: 500px; /* Increase height for better vertical display */
+    }
+
+    main#main-carousel-vertically {
+        height: 500px;
+        perspective: 1000px;
+    }
+
+    main#main-carousel-vertically .item-carousel {
+        transform: rotateX(calc(20deg * var(--r))) translateY(calc(-180px * var(--r))) translateZ(calc(-60px * var(--abs)));
+    }
+}
+@media (min-width: 1200px) {
+    main#main-carousel-vertically .carousel-container {
+        height: 550px;
+    }
+
+    main#main-carousel-vertically {
+        height: 550px;
+        perspective: 1200px;
+    }
+
+    main#main-carousel-vertically .item-carousel {
+        transform: rotateX(calc(18deg * var(--r))) translateY(calc(-200px * var(--r))) translateZ(calc(-70px * var(--abs)));
+    }
+}
+@media (max-width: 1024px) {
+    main#main-carousel-vertically .carousel-container {
+        height: 450px;
+    }
+
+    main#main-carousel-vertically {
+        height: 450px;
+    }
+
+    main#main-carousel-vertically .item-carousel {
+        width: 240px;
+        height: 220px;
+        transform: rotateX(calc(16deg * var(--r))) translateY(calc(-130px * var(--r))) translateZ(calc(-40px * var(--abs)));
+    }
+}
+@media (max-width: 768px) {
+    main#main-carousel-vertically .carousel-container {
+        height: 400px;
+    }
+
+    main#main-carousel-vertically {
+        height: 400px;
+    }
+
+    main#main-carousel-vertically .item-carousel {
+        width: 220px;
+        height: 200px;
+        transform: rotateX(calc(14deg * var(--r))) translateY(calc(-100px * var(--r))) translateZ(calc(-30px * var(--abs)));
+    }
+}
+@media (max-width: 480px) {
+    main#main-carousel-vertically .carousel-container {
+        height: 350px;
+    }
+
+    main#main-carousel-vertically {
+        height: 350px;
+        perspective: 600px;
+    }
+
+    main#main-carousel-vertically .item-carousel {
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+        transform: rotateX(calc(12deg * var(--r))) translateY(calc(-80px * var(--r))) translateZ(calc(-20px * var(--abs)));
+    }
+}
+
+@media (max-width: 320px) {
+    main#main-carousel-vertically .item-carousel {
+        width: 160px;
+        height: 160px;
+        transform: rotateY(calc(8deg * var(--r))) translateX(calc(-60px * var(--r))) translateZ(calc(-15px * var(--abs)));
+    }
+}
+/*-----------------------------------Section Show Images-----------------------------------------------*/
+.single-carousel {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-carousel img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+/*-----------------------------------banner horizontally-----------------------------------------------*/
+.showcase-section .new-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    perspective: 1500px;
+}
+
+.new-banner {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+.new-banner .new-slider {
+    position: absolute;
+    width: 180px;
+    height: 140px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRunHorizontally 20s linear infinite;
+}
+
+/* Auto Rotation Animation */
+@keyframes autoRunHorizontally {
+    from {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+    to {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+/* Each Item Positioned in 3D Circle */
+.new-banner .new-slider .new-item {
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+    translateZ(230px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-banner .new-slider .new-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.9;
+    padding: 5px;
+}
+
+@media (min-width: 992px) {
+    .showcase-section .new-banner {
+        margin: -250px;
+    }
+
+    .showcase-content .row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .showcase-text, .new-banner {
+        height: 100%;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media (max-width: 991px) {
+    .new-banner {
+        min-height: 300px;
+        perspective: 1000px;
+    }
+
+    .new-banner .new-slider {
+        width: 110px;
+        height: 110px;
+    }
+
+    .new-banner .new-slider .new-item {
+        width: 110px;
+        height: 90px;
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(170px);
+    }
+}
+@media (max-width: 767px) {
+    .showcase-text {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .new-banner {
+        min-height: 250px;
+        perspective: 800px;
+    }
+
+    .new-banner .new-slider {
+        width: 100px;
+        height: 70px;
+    }
+
+    .new-banner .new-slider .new-item {
+        width: 77px;
+        height: 77px;
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(160px);
+    }
+}
+@media (max-width: 480px) {
+    .new-banner {
+        min-height: 220px;
+        perspective: 600px;
+    }
+
+    .new-banner .new-slider {
+        width: 100px;
+        height: 70px;
+    }
+
+    .new-banner .new-slider .new-item {
+        width: 77px;
+        height: 77px;
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(160px);
     }
 }
