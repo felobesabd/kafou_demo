@@ -119,3 +119,38 @@ $(document).ready(function() {
         $.scrollify.update();
     });
 });
+
+// Dynamic carousel without radio buttons
+let currentPosition = 3;
+const totalPositions = 5;
+const autoPlayInterval = 3000;
+const carousel = document.getElementById('main-carousel');
+
+function updateCarouselPosition() {
+    if (carousel) {
+        carousel.style.setProperty('--position', currentPosition);
+    }
+}
+
+function moveToNextPosition() {
+    currentPosition = currentPosition >= totalPositions ? 1 : currentPosition + 1;
+    updateCarouselPosition();
+}
+
+// carousel position
+updateCarouselPosition();
+
+// start automatic
+let autoPlayTimer = setInterval(moveToNextPosition, autoPlayInterval);
+
+// pause on hover
+const carouselContainer = document.querySelector('.carousel-container');
+if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayTimer);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoPlayTimer = setInterval(moveToNextPosition, autoPlayInterval);
+    });
+}

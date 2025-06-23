@@ -359,6 +359,37 @@
     </div>
   </div>
 
+  <div class="scrollify main-section carousel-section">
+    <div class="container carousel-content">
+      <div class="row align-items-center">
+        <div class="carousel-text">
+          <h2 class="carousel-title">Our Clients</h2>
+          <a href="#" class="cta-button">View More</a>
+        </div>
+
+        <div class="carousel-container">
+          <main id="main-carousel">
+            <div class="item-carousel">
+              <img src="Uploads/Clients/466e9492-3e28-4adc-9ce2-0261d041524b.png" alt="">
+            </div>
+            <div class="item-carousel">
+              <img src="Uploads/Clients/fed44ad2-2054-4f7a-98dd-56ef34768291.png" alt="">
+            </div>
+            <div class="item-carousel">
+              <img src="Uploads/Clients/8269cb84-f34b-47cf-bddb-070ab73d8421.png" alt="">
+            </div>
+            <div class="item-carousel">
+              <img src="Uploads/Clients/39c88006-53da-4440-aa84-f6147683cf09.png" alt="">
+            </div>
+            <div class="item-carousel">
+              <img src="Uploads/Clients/4c63c42d-3f9f-4cf2-bd1e-31220cb743a2.png" alt="">
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Showcase Section (Section Seven) -->
   <div class="scrollify main-section split-section">
     <div class="text-content">
@@ -463,128 +494,6 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.21/jquery.scrollify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebarClose = document.getElementById('sidebarClose');
-    const navigation = document.getElementById('navigation');
-    const overlay = document.querySelector('.navigation-overlay');
-
-    function toggleMenu() {
-      navigation.classList.toggle('active');
-      document.body.classList.toggle('menu-open');
-    }
-
-    function closeMenu() {
-      navigation.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    }
-
-    // Toggle navigation menu when hamburger is clicked
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Close menu when clicking overlay
-    overlay.addEventListener('click', closeMenu);
-
-    sidebarClose.addEventListener('click', closeMenu);
-
-    // Close menu when clicking navigation links
-    const navLinks = document.querySelectorAll('.nav-item-primary, .nav-item-secondary');
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeMenu();
-      }
-    });
-
-    // Prevent body scroll when scrolling inside menu
-    const navigationNav = document.querySelector('.navigation-nav');
-    navigationNav.addEventListener('wheel', function(e) {
-      e.stopPropagation();
-    }, { passive: true });
-
-    $(document).ready(function() {
-      $.scrollify({
-        section: ".scrollify",
-        sectionName: "section-name",
-        easing: "easeOutExpo",
-        scrollSpeed: 1100,
-        offset: 0,
-        scrollbars: true,
-        standardScrollElements: "",
-        setHeights: true,
-        overflowScroll: true,
-        updateHash: false,
-        touchScroll: true,
-        before: function(index, sections) {
-          // Add active class to current section
-          $(sections[index]).addClass('active').siblings().removeClass('active');
-
-          // Handle header background and button colors
-          const $header        = $('header');
-          const $categoriesBtn = $('.categories-btn');
-          const $menuToggle    = $('.menu-toggle');
-          const $headerDriver  = $('.header-divider');
-          const $logoImg       = $('#main-logo');
-
-          if ($(sections[index]).hasClass('dribbble-section')) {
-            $categoriesBtn.addClass('dark-color');
-            $menuToggle.addClass('dark-color');
-            $headerDriver.addClass('dark-color');
-            $logoImg.attr('src', 'assets/images/kafou-logo.png');
-          } else if ($(sections[index]).hasClass('red-split-section') || $(sections[index]).hasClass('footer-wrapper') || $(sections[index]).hasClass('fullscreen-section') || $(sections[index]).hasClass('showcase-section')) {
-            $logoImg.attr('src', 'assets/images/kafou.png');
-            $categoriesBtn.removeClass('dark-color');
-            $menuToggle.removeClass('dark-color');
-            $headerDriver.removeClass('dark-color');
-          } else {
-            $categoriesBtn.removeClass('dark-color');
-            $menuToggle.removeClass('dark-color');
-            $headerDriver.removeClass('dark-color');
-            $logoImg.attr('src', 'assets/images/kafou-logo.png');
-          }
-        },
-        after: function() {},
-        afterResize: function() {
-          $.scrollify.update();
-        },
-        afterRender: function() {
-          // Add active class to first section on load
-          $('.scrollify').first().addClass('active');
-
-          // Check initial section for header styling
-          const $currentSection = $('.scrollify.active');
-          const $header = $('header');
-          const $categoriesBtn = $('.categories-btn');
-          const $menuToggle = $('.menu-toggle');
-          const $logoImg = $('#main-logo');
-
-          if ($currentSection.hasClass('dribbble-section')) {
-            $header.addClass('dark-bg');
-            $categoriesBtn.addClass('dark-color');
-            $menuToggle.addClass('dark-color');
-            $logoImg.attr('src', 'assets/images/kafou-logo.png');
-          } else if ($currentSection.hasClass('footer-wrapper') || $currentSection.hasClass('fullscreen-section')) {
-            $logoImg.attr('src', 'assets/images/kafou.png');
-          } else {
-            $header.removeClass('dark-bg');
-            $categoriesBtn.removeClass('dark-color');
-            $menuToggle.removeClass('dark-color');
-            $logoImg.attr('src', 'assets/images/kafou-logo.png');
-          }
-
-          $.scrollify.update();
-        }
-      });
-
-      // Force an update after all content is loaded
-      window.addEventListener('load', function() {
-        $.scrollify.update();
-      });
-    });
-  </script>
+  <script src="assets/js/custom.js"></script>
 </body>
 </html>
