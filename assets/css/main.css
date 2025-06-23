@@ -2132,7 +2132,6 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         height: 100%;
     }
 }
-
 @media (max-width: 768px) {
     /*.row {
         flex-direction: column;
@@ -2183,7 +2182,6 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         font-size: 0.75rem;
     }
 }
-
 @media (max-width: 480px) {
     .carousel-section {
         padding: 10px;
@@ -2243,7 +2241,6 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         height: 10px;
     }
 }
-
 @media (max-width: 320px) {
     .item-carousel {
         width: 160px;
@@ -2255,7 +2252,6 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         font-size: 1.5rem;
     }
 }
-
 /* Large screen layout adjustments */
 @media (min-width: 769px) {
     .row {
@@ -2380,7 +2376,6 @@ main#main-carousel-partners .item-carousel img {
         max-height: 130px;
     }
 }
-
 @media (max-width: 768px) {
     main#main-carousel-partners {
         height: 280px;
@@ -2393,11 +2388,10 @@ main#main-carousel-partners .item-carousel img {
     }
 
     main#main-carousel-partners .item-carousel img {
-        max-width: 160px;
-        max-height: 120px;
+        width: 100%;
+        height: 100%;
     }
 }
-
 @media (max-width: 480px) {
     main#main-carousel-partners {
         height: 250px;
@@ -2412,7 +2406,14 @@ main#main-carousel-partners .item-carousel img {
     }
 
     main#main-carousel-partners .item-carousel img {
-        max-width: 140px;
-        max-height: 100px;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (max-width: 320px) {
+    main#main-carousel-partners .item-carousel {
+        width: 160px;
+        height: 160px;
+        transform: rotateY(calc(-3deg * var(--r))) translateX(calc(-60px * var(--r))) translateZ(calc(-15px * var(--abs)));
     }
 }
