@@ -125,10 +125,12 @@ let currentPosition = 3;
 const totalPositions = 5;
 const autoPlayInterval = 3000;
 const carousel = document.getElementById('main-carousel');
+const carouselPartners = document.getElementById('main-carousel-partners');
 
 function updateCarouselPosition() {
-    if (carousel) {
+    if (carousel || carouselPartners) {
         carousel.style.setProperty('--position', currentPosition);
+        carouselPartners.style.setProperty('--position', currentPosition);
     }
 }
 
