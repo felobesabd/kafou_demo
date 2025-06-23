@@ -120,39 +120,50 @@ $(document).ready(function() {
     });
 });
 
-// Dynamic carousel without radio buttons
-let currentPosition = 3;
-const totalPositions = 5;
-const autoPlayInterval = 3000;
-const carousel = document.getElementById('main-carousel');
-const carouselPartners = document.getElementById('main-carousel-partners');
+// auto-play carousel
+function createCarousel(carouselId, interval = 3000) {
+    let currentPosition = 3;
+    const totalPositions = 5;
+    const carousel = document.getElementById(carouselId);
 
-function updateCarouselPosition() {
-    if (carousel || carouselPartners) {
-        carousel.style.setProperty('--position', currentPosition);
-        carouselPartners.style.setProperty('--position', currentPosition);
+    function updateCarouselPosition() {
+        if (carousel) {
+            carousel.style.setProperty('--position', currentPosition);
+        }
     }
-}
 
-function moveToNextPosition() {
-    currentPosition = currentPosition >= totalPositions ? 1 : currentPosition + 1;
+    function moveToNextPosition() {
+        currentPosition = currentPosition >= totalPositions ? 1 : currentPosition + 1;
+        updateCarouselPosition();
+    }
+
+    // Initialize carousel position
     updateCarouselPosition();
+
+    // Start automatic movement
+    let autoPlayTimer = setInterval(moveToNextPosition, interval);
+
+    // Pause on hover
+    const carouselContainer = carousel?.closest('.carousel-container');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(autoPlayTimer);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            autoPlayTimer = setInterval(moveToNextPosition, interval);
+        });
+    }
+
+    return {
+        pause: () => clearInterval(autoPlayTimer),
+        resume: () => {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(moveToNextPosition, interval);
+        }
+    };
 }
 
-// carousel position
-updateCarouselPosition();
-
-// start automatic
-let autoPlayTimer = setInterval(moveToNextPosition, autoPlayInterval);
-
-// pause on hover
-const carouselContainer = document.querySelector('.carousel-container');
-if (carouselContainer) {
-    carouselContainer.addEventListener('mouseenter', () => {
-        clearInterval(autoPlayTimer);
-    });
-
-    carouselContainer.addEventListener('mouseleave', () => {
-        autoPlayTimer = setInterval(moveToNextPosition, autoPlayInterval);
-    });
-}
+// Initialize both carousels with different intervals
+const partnersCarousel = createCarousel('main-carousel-partners', 3500); // 3.5 seconds
+const clientsCarousel = createCarousel('main-carousel', 3000); // 3 seconds

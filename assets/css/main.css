@@ -2044,7 +2044,7 @@ main#main-carousel {
     --position: 3;
 }
 
-main#main-carousel-partners {
+/*main#main-carousel-partners {
     width: 100%;
     height: 300px;
     display: flex;
@@ -2056,7 +2056,7 @@ main#main-carousel-partners {
     --items: 5;
     --middle: 3;
     --position: 3;
-}
+}*/
 
 .item-carousel {
     text-align: center;
@@ -2156,9 +2156,9 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         height: 280px;
     }
 
-    main#main-carousel-partners {
+    /*main#main-carousel-partners {
         height: 280px;
-    }
+    }*/
 
     .item-carousel {
         width: 220px;
@@ -2202,10 +2202,10 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         perspective: 400px;
     }
 
-    main#main-carousel-partners {
+    /*main#main-carousel-partners {
         height: 250px;
         perspective: 400px;
-    }
+    }*/
 
     .item-carousel {
         width: 180px;
@@ -2283,11 +2283,11 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         perspective: 800px;
     }
 
-    main#main-carousel-partners {
+    /*main#main-carousel-partners {
         height: 400px;
         width: 100%;
         perspective: 800px;
-    }
+    }*/
 
     .item-carousel {
         width: 300px;
@@ -2307,14 +2307,112 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
         perspective: 1000px;
     }
 
-    main#main-carousel-partners {
+    /*main#main-carousel-partners {
         height: 450px;
         perspective: 1000px;
-    }
+    }*/
 
     .item-carousel {
         width: 320px;
         height: 280px;
         transform: rotateY(calc(-20deg * var(--r))) translateX(calc(-250px * var(--r))) translateZ(calc(-70px * var(--abs)));
+    }
+}
+
+main#main-carousel-partners {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    --items: 5;
+    --middle: 3;
+    --position: 3;
+}
+
+main#main-carousel-partners .item-carousel {
+    text-align: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    width: 280px;
+    height: 250px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    --r: calc(var(--position) - var(--offset));
+    --abs: max(calc(var(--r) * -1), var(--r));
+    transform: rotateY(calc(-15deg * var(--r))) translateX(calc(-200px * var(--r))) translateZ(calc(-50px * var(--abs)));
+    z-index: calc(10 - var(--abs));
+    opacity: calc(1 - (var(--abs) * 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main#main-carousel-partners .item-carousel img {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Responsive adjustments for partners carousel */
+@media (max-width: 1024px) {
+    main#main-carousel-partners {
+        height: 280px;
+    }
+
+    main#main-carousel-partners .item-carousel {
+        width: 240px;
+        height: 220px;
+        transform: rotateY(calc(-12deg * var(--r))) translateX(calc(-160px * var(--r))) translateZ(calc(-40px * var(--abs)));
+    }
+
+    main#main-carousel-partners .item-carousel img {
+        max-width: 180px;
+        max-height: 130px;
+    }
+}
+
+@media (max-width: 768px) {
+    main#main-carousel-partners {
+        height: 280px;
+    }
+
+    main#main-carousel-partners .item-carousel {
+        width: 220px;
+        height: 200px;
+        transform: rotateY(calc(-8deg * var(--r))) translateX(calc(-120px * var(--r))) translateZ(calc(-30px * var(--abs)));
+    }
+
+    main#main-carousel-partners .item-carousel img {
+        max-width: 160px;
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    main#main-carousel-partners {
+        height: 250px;
+        perspective: 400px;
+    }
+
+    main#main-carousel-partners .item-carousel {
+        width: 180px;
+        height: 180px;
+        padding: 15px;
+        transform: rotateY(calc(-5deg * var(--r))) translateX(calc(-80px * var(--r))) translateZ(calc(-20px * var(--abs)));
+    }
+
+    main#main-carousel-partners .item-carousel img {
+        max-width: 140px;
+        max-height: 100px;
     }
 }
