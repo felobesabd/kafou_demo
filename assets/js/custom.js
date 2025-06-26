@@ -41,6 +41,44 @@ navigationNav.addEventListener('wheel', function(e) {
 }, { passive: true });
 
 $(document).ready(function() {
+    function updateHeaderForSection($section) {
+        if (!$section || !$section.length) return;
+
+        const $header        = $('header');
+        const $categoriesBtn = $('.categories-btn');
+        const $menuToggle    = $('.menu-toggle');
+        const $headerDriver  = $('.header-divider');
+        const $logoImg       = $('#main-logo');
+
+        const hasDarkTheme = $section.hasClass('dribbble-section');
+        const hasLightLogoOnly = $section.hasClass('footer-wrapper')
+            || $section.hasClass('fullscreen-section') || $section.hasClass('white-logo-theme');
+
+        const hasDarkThemeAndLogoWhite = $section.hasClass('logo-white-dark-theme');
+
+        if (hasDarkTheme) {
+            $categoriesBtn.addClass('dark-color');
+            $menuToggle.addClass('dark-color');
+            $headerDriver.addClass('dark-color');
+            $logoImg.attr('src', 'assets/images/kafou_green_logo.png');
+        } else if (hasLightLogoOnly) {
+            $logoImg.attr('src', 'assets/images/kafou_white_logo.png');
+            $categoriesBtn.removeClass('dark-color');
+            $menuToggle.removeClass('dark-color');
+            $headerDriver.removeClass('dark-color');
+        } else if (hasDarkThemeAndLogoWhite) {
+            $categoriesBtn.addClass('dark-color');
+            $menuToggle.addClass('dark-color');
+            $headerDriver.addClass('dark-color');
+            $logoImg.attr('src', 'assets/images/kafou_white_logo.png');
+        } else {
+            $categoriesBtn.removeClass('dark-color');
+            $menuToggle.removeClass('dark-color');
+            $headerDriver.removeClass('dark-color');
+            $logoImg.attr('src', 'assets/images/kafou_green_logo.png');
+        }
+    }
+
     $.scrollify({
         section: ".scrollify",
         sectionName: "section-name",
@@ -56,30 +94,8 @@ $(document).ready(function() {
         before: function(index, sections) {
             // Add active class to current section
             $(sections[index]).addClass('active').siblings().removeClass('active');
-
-            // Handle header background and button colors
-            const $header        = $('header');
-            const $categoriesBtn = $('.categories-btn');
-            const $menuToggle    = $('.menu-toggle');
-            const $headerDriver  = $('.header-divider');
-            const $logoImg       = $('#main-logo');
-
-            if ($(sections[index]).hasClass('dribbble-section') || $(sections[index]).hasClass('why-split-section')) {
-                $categoriesBtn.addClass('dark-color');
-                $menuToggle.addClass('dark-color');
-                $headerDriver.addClass('dark-color');
-                $logoImg.attr('src', 'assets/images/kafou-logo.png');
-            } else if ($(sections[index]).hasClass('red-split-section') || $(sections[index]).hasClass('footer-wrapper') || $(sections[index]).hasClass('fullscreen-section') || $(sections[index]).hasClass('showcase-section')) {
-                $logoImg.attr('src', 'assets/images/kafou.png');
-                $categoriesBtn.removeClass('dark-color');
-                $menuToggle.removeClass('dark-color');
-                $headerDriver.removeClass('dark-color');
-            } else {
-                $categoriesBtn.removeClass('dark-color');
-                $menuToggle.removeClass('dark-color');
-                $headerDriver.removeClass('dark-color');
-                $logoImg.attr('src', 'assets/images/kafou-logo.png');
-            }
+            const $section = $(sections[index]);
+            updateHeaderForSection($section);
         },
         after: function() {},
         afterResize: function() {
@@ -87,29 +103,8 @@ $(document).ready(function() {
         },
         afterRender: function() {
             // Add active class to first section on load
-            $('.scrollify').first().addClass('active');
-
-            // Check initial section for header styling
-            const $currentSection = $('.scrollify.active');
-            const $header = $('header');
-            const $categoriesBtn = $('.categories-btn');
-            const $menuToggle = $('.menu-toggle');
-            const $logoImg = $('#main-logo');
-
-            if ($currentSection.hasClass('dribbble-section')) {
-                $header.addClass('dark-bg');
-                $categoriesBtn.addClass('dark-color');
-                $menuToggle.addClass('dark-color');
-                $logoImg.attr('src', 'assets/images/kafou-logo.png');
-            } else if ($currentSection.hasClass('footer-wrapper') || $currentSection.hasClass('fullscreen-section')) {
-                $logoImg.attr('src', 'assets/images/kafou.png');
-            } else {
-                $header.removeClass('dark-bg');
-                $categoriesBtn.removeClass('dark-color');
-                $menuToggle.removeClass('dark-color');
-                $logoImg.attr('src', 'assets/images/kafou-logo.png');
-            }
-
+            const $currentSection = $('.scrollify').first().addClass('active');
+            updateHeaderForSection($currentSection);
             $.scrollify.update();
         }
     });
