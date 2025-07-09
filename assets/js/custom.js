@@ -172,15 +172,41 @@ const images = [
     "Uploads/Partners/94d89293-92a3-4e69-bf4b-bcfae1e52865.png"
 ];
 
-let currentIndex = 0;
-const imageEl = document.getElementById("carousel-image");
+const imagesClients = [
+    "Uploads/Clients/Picture3.png",
+    "Uploads/Clients/123fa7bc-9ceb-4fb3-8a6e-99038e4e8bcb.png",
+    "Uploads/Clients/4c63c42d-3f9f-4cf2-bd1e-31220cb743a2.png",
+    "Uploads/Clients/17245826-ca02-42da-a5da-b7d74e21f180.png",
+    "Uploads/Clients/851ad61b-067c-4050-911e-f745476d0e3c.png"
+];
 
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
+let currentIndexPartners = 0;
+let currentIndexClients = 0;
+const imageEl = document.getElementById("carousel-image");
+const imageElClients = document.getElementById("carousel-image-clients");
+
+// Function to handle partners carousel
+function rotatePartners() {
+    currentIndexPartners = (currentIndexPartners + 1) % images.length;
     imageEl.style.opacity = 0;
 
     setTimeout(() => {
-        imageEl.src = images[currentIndex];
+        imageEl.src = images[currentIndexPartners];
         imageEl.style.opacity = 1;
     }, 500);
-}, 3000);
+}
+
+// Function to handle clients carousel
+function rotateClients() {
+    currentIndexClients = (currentIndexClients + 1) % imagesClients.length;
+    imageElClients.style.opacity = 0;
+
+    setTimeout(() => {
+        imageElClients.src = imagesClients[currentIndexClients];
+        imageElClients.style.opacity = 1;
+    }, 500);
+}
+
+// Start both carousels
+setInterval(rotatePartners, 3000);
+setInterval(rotateClients, 3000);

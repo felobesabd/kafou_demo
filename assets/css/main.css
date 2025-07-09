@@ -432,7 +432,7 @@ body.menu-open {
     font-size: 48px;
     font-weight: bold;
     line-height: 1.2;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .section-description {
@@ -563,8 +563,8 @@ body.menu-open {
     }
 
     .section-title {
-        font-size: 24px;
-        margin-bottom: 15px;
+        font-size: 35px;
+        margin-bottom: 0px;
         line-height: 1.2;
     }
 
@@ -661,8 +661,7 @@ body.menu-open {
 
 /* Dribbble Section Styles */
 .dribbble-section {
-    display: flex;
-    padding: 0;
+    padding: 90px 0;
     height: 100vh;
     background: #f5f5f5;
     position: relative;
@@ -670,8 +669,8 @@ body.menu-open {
 }
 
 .dribbble-section .text-content {
-    width: 40%;
-    padding: 60px;
+    width: 100%;
+    padding: 30px 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -679,14 +678,12 @@ body.menu-open {
 }
 
 .dribbble-section .media-content {
-    width: 60%;
+    width: 100%;
     position: relative;
-    padding: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-content: center;
-    height: 100%;
     overflow: hidden;
 }
 
@@ -721,6 +718,11 @@ body.menu-open {
     line-height: 1.6;
 }
 
+.icon_box img {
+    width: 325px;
+    height: 165px;
+}
+
 @media (max-width: 768px) {
     .class-d-none {
         display: none;
@@ -734,7 +736,7 @@ body.menu-open {
 
     .dribbble-section .text-content {
         width: 100%;
-        padding: 80px 20px 30px 20px;
+        padding: 25px;
     }
 
     .dribbble-section .media-content {
@@ -755,13 +757,13 @@ body.menu-open {
 
 @media (max-width: 480px) {
     .dribbble-section .text-content {
-        padding: 80px 20px 30px 20px;
+        padding: 25px;
     }
 }
 
 @media (max-width: 380px) {
     .dribbble-section .text-content {
-        padding: 80px 20px 30px 20px;
+        padding: 20px;
     }
 }
 
@@ -1981,12 +1983,6 @@ body.menu-open {
     width: 100%;
 }
 
-.carousel-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-}
-
 .carousel-title {
     font-size: 2.8rem;
     font-weight: 700;
@@ -2000,9 +1996,7 @@ body.menu-open {
 }
 
 .carousel-container {
-    flex: 1;
     position: relative;
-    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2139,7 +2133,6 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
     }*/
 
     .carousel-text {
-        text-align: center;
         padding: 60px 0;
     }
 
@@ -2537,8 +2530,8 @@ main#main-carousel-vertically .item-carousel {
 }
 /*-----------------------------------Section Show Images-----------------------------------------------*/
 .single-carousel {
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     overflow: hidden;
     border-radius: 20px;
     background: white;
@@ -3004,4 +2997,25 @@ main#main-carousel-vertically .item-carousel {
         transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg))
         translateZ(160px);
     }
+}
+
+.show-images-section {
+  height: 100vh;
+  position: relative;
+}
+
+.show-images-section .carousel-text {
+  width: 100%;
+  padding: 30px 60px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .show-images-section .carousel-text {
+    padding: 0 0 40px 35px;
+  }
 }
