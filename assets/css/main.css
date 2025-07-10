@@ -326,7 +326,7 @@ body.menu-open {
     padding: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     background: #f5f5f5;
     color: #000;
 }
@@ -432,7 +432,7 @@ body.menu-open {
     font-size: 48px;
     font-weight: bold;
     line-height: 1.2;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .section-description {
@@ -510,6 +510,7 @@ body.menu-open {
         width: 100%;
         height: 50%;
         padding: 20px;
+        justify-content: center;
     }
 
     .split-section .text-content .section-title {
@@ -564,6 +565,12 @@ body.menu-open {
 
     .section-title {
         font-size: 25px;
+        margin-bottom: 0px;
+        line-height: 1.2;
+    }
+
+    .dribbble-section .section-title {
+        font-size: 35px !important;
         margin-bottom: 0px;
         line-height: 1.2;
     }
@@ -661,7 +668,8 @@ body.menu-open {
 
 /* Dribbble Section Styles */
 .dribbble-section {
-    padding: 90px 0;
+    display: flex;
+    padding: 0;
     height: 100vh;
     background: #f5f5f5;
     position: relative;
@@ -669,8 +677,82 @@ body.menu-open {
 }
 
 .dribbble-section .text-content {
-    width: 100%;
-    padding: 30px 60px;
+    width: 30%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    color: #000;
+}
+
+.dribbble-section .media-content {
+    width: 70%;
+    position: relative;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-content: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.icon_box img {
+    width: 260px;
+    height: 180px;
+}
+
+@media (max-width: 768px) {
+    .class-d-none {
+        display: none;
+    }
+
+    .dribbble-section {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .dribbble-section .media-content {
+        flex: 1 1 auto;
+        width: 100%;
+        padding: 20px 20px 0 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        align-content: center;
+        align-items: center;
+        height: auto;
+        overflow: hidden;
+        order: 1; /* Images appear first */
+    }
+
+    .dribbble-section .text-content {
+        width: 100%;
+        padding: 16px 10px 55px 25px;
+        background: transparent;
+        order: 2; /* Text appears second */
+    }
+
+    .icon_box img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*.dribbble-section {
+    display: flex;
+    padding: 0;
+    height: 100vh;
+    background: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+}
+
+.dribbble-section .text-content {
+    width: 40%;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -678,12 +760,14 @@ body.menu-open {
 }
 
 .dribbble-section .media-content {
-    width: 100%;
+    width: 60%;
     position: relative;
+    padding: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-content: center;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -718,54 +802,54 @@ body.menu-open {
     line-height: 1.6;
 }
 
-.icon_box img {
-    width: 325px;
-    height: 165px;
-}
-
 @media (max-width: 768px) {
     .class-d-none {
         display: none;
     }
 
     .dribbble-section {
+        display: flex;
         flex-direction: column;
         height: 100vh;
         overflow: hidden;
     }
-
-    .dribbble-section .text-content {
-        width: 100%;
-        padding: 25px;
-    }
-
     .dribbble-section .media-content {
+        flex: 1 1 auto;
         width: 100%;
         padding: 0 20px 20px 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        align-content: center;
+        align-items: center;
         height: auto;
         overflow: hidden;
+    }
+    .dribbble-section .text-content {
+        width: 100%;
+        margin-top: auto;
+        padding: 16px 10px 24px 10px;
+        text-align: center;
+        background: transparent;
     }
 
     .icon_box img {
         width: 100%;
         height: 100%;
     }
-}
+}*/
 
-@media (max-width: 480px) {
+/*@media (max-width: 480px) {
     .dribbble-section .text-content {
-        padding: 25px;
+        padding: 80px 20px 30px 20px;
     }
 }
 
 @media (max-width: 380px) {
     .dribbble-section .text-content {
-        padding: 20px;
+        padding: 80px 20px 30px 20px;
     }
-}
+}*/
 
 /* Change menu color to black when the last section is in view */
 .dribbble-section.active ~ header .categories-btn,
@@ -1328,11 +1412,11 @@ body.menu-open {
     box-shadow: 0 8px 32px rgba(0,0,0,0.18);
     overflow: hidden;
     transition:
-        transform 0.5s cubic-bezier(.4,2,.6,1),
-        opacity 0.5s,
-        z-index 0s,
-        width 0.5s,
-        height 0.5s;
+            transform 0.5s cubic-bezier(.4,2,.6,1),
+            opacity 0.5s,
+            z-index 0s,
+            width 0.5s,
+            height 0.5s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1430,7 +1514,7 @@ body.menu-open {
     .cta-button, .showcase-btn {
         font-size: 1rem;
         padding: 10px 24px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .showcase-slider-col {
         margin-top: 0;
@@ -1981,7 +2065,12 @@ body.menu-open {
     position: relative;
     z-index: 2;
     width: 100%;
-    height: 600px;
+}
+
+.carousel-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .carousel-title {
@@ -1997,7 +2086,9 @@ body.menu-open {
 }
 
 .carousel-container {
+    flex: 1;
     position: relative;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2134,12 +2225,12 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
     }*/
 
     .carousel-text {
+        text-align: center;
         padding: 60px 0;
     }
 
     .carousel-title {
         font-size: 2rem;
-        margin-bottom: 0;
     }
 
     .carousel-container {
@@ -2532,8 +2623,8 @@ main#main-carousel-vertically .item-carousel {
 }
 /*-----------------------------------Section Show Images-----------------------------------------------*/
 .single-carousel {
-    width: 400px;
-    height: 250px;
+    width: 300px;
+    height: 200px;
     overflow: hidden;
     border-radius: 20px;
     background: white;
@@ -3002,22 +3093,95 @@ main#main-carousel-vertically .item-carousel {
 }
 
 .show-images-section {
-  height: 100vh;
-  position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.show-images-section .carousel-text {
-  width: 100%;
-  padding: 30px 60px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background: transparent;
-  z-index: 2;
+.show-images-section .container {
+    height: 100%;
+    max-width: 100%;
+    padding: 0;
 }
 
+.show-images-section .row {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.carousel-text {
+    width: 40%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.carousel-text .carousel-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.single-carousel {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
-  .show-images-section .carousel-text {
-    padding: 0 0 90px 35px;
-  }
+    .show-images-section .row {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .carousel-container {
+        width: 100%;
+        flex: 1 1 auto;
+        padding: 20px;
+        order: 1; /* Images appear first on mobile */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-text {
+        width: 100%;
+        padding: 20px 20px 90px 20px;
+        justify-content: flex-start;
+        /*align-items: center;
+        text-align: center;*/
+        order: 2; /* Text appears second (bottom) on mobile */
+        flex: 0 0 auto;
+        height: auto;
+    }
+
+    .carousel-text .carousel-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .single-carousel {
+        height: 55%;
+    }
 }
