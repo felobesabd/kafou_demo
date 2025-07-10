@@ -3158,7 +3158,7 @@ main#main-carousel-vertically .item-carousel {
         width: 100%;
         flex: 1 1 auto;
         padding: 20px;
-        order: 1; /* Images appear first on mobile */
+        order: 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -3170,7 +3170,7 @@ main#main-carousel-vertically .item-carousel {
         justify-content: flex-start;
         /*align-items: center;
         text-align: center;*/
-        order: 2; /* Text appears second (bottom) on mobile */
+        order: 2;
         flex: 0 0 auto;
         height: auto;
     }
