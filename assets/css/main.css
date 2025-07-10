@@ -628,10 +628,10 @@ body.menu-open {
         overflow: hidden;
     }
 
-    .dribbble-section .text-content {
+    /*.dribbble-section .text-content {
         width: 100%;
         padding: 80px 20px 30px 20px;
-    }
+    }*/
 
     .dribbble-section .media-content {
         width: 100%;
@@ -730,7 +730,7 @@ body.menu-open {
 
     .dribbble-section .text-content {
         width: 100%;
-        padding: 16px 10px 55px 25px;
+        padding: 0 10px 80px 25px;
         background: transparent;
         order: 2; /* Text appears second */
     }
