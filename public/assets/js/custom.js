@@ -56,7 +56,8 @@ function updateHeaderForSection($section) {
 
     const hasDarkTheme = $section.hasClass('dribbble-section');
     const hasLightLogoOnly = $section.hasClass('footer-wrapper')
-        || $section.hasClass('fullscreen-section') || $section.hasClass('white-logo-theme');
+        || $section.hasClass('fullscreen-section') || $section.hasClass('white-logo-theme')
+        || $section.hasClass('stats-section');
 
     const hasDarkThemeAndLogoWhite = $section.hasClass('logo-white-dark-theme');
 
@@ -100,7 +101,7 @@ function initializeScrollify() {
     // Check if all critical elements are loaded
     const criticalElements = document.querySelectorAll('header, .scrollify');
     const allElementsLoaded = Array.from(criticalElements).every(el => el.offsetHeight > 0);
-    
+
     if (!allElementsLoaded) {
         console.log('Critical elements not fully loaded, retrying...');
         return false;
@@ -140,11 +141,11 @@ function initializeScrollify() {
                 // Add active class to first section on load
                 const $currentSection = $('.scrollify').first().addClass('active');
                 updateHeaderForSection($currentSection);
-                
+
                 // Mark as initialized
                 scrollifyInitialized = true;
                 console.log('Scrollify initialized successfully');
-                
+
                 // Final update after everything is set
                 setTimeout(() => {
                     if (scrollifyInitialized) {
@@ -180,20 +181,20 @@ function enableNormalScrolling() {
     console.log('Enabling normal scrolling as fallback');
     // Add smooth scrolling to the page
     document.documentElement.style.scrollBehavior = 'smooth';
-    
+
     // Add active class to sections on scroll
     window.addEventListener('scroll', function() {
         const sections = document.querySelectorAll('.scrollify');
         const scrollPosition = window.scrollY + window.innerHeight / 2;
-        
+
         sections.forEach((section, index) => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
-            
+
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 section.classList.add('active');
                 sections.forEach(s => s !== section && s.classList.remove('active'));
-                
+
                 // Update header for current section
                 updateHeaderForSection($(section));
             }

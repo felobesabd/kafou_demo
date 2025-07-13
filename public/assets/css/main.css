@@ -2340,12 +2340,12 @@ input:nth-of-type(5):checked ~ .carousel-container main#main-carousel { --positi
 }
 /* Large screen layout adjustments */
 @media (min-width: 769px) {
-    .row {
+    /*.row {
         display: flex;
         align-items: center;
         gap: 40px;
-        /*height: 100%;*/
-    }
+        !*height: 100%;*!
+    }*/
 
     .carousel-text {
         flex: 0 0 35%; /* Takes exactly 1/4 of the width */
@@ -3182,5 +3182,289 @@ main#main-carousel-vertically .item-carousel {
 
     .single-carousel {
         height: 55%;
+    }
+}
+
+/* Centered division image for split-section */
+.img-division {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 380px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .img-division {
+        width: 90% !important;
+    }
+}
+
+.division-section {
+    display: flex;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.division-section .text-content {
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background: #f5f5f5;
+    color: #000;
+}
+
+.division-section .media-content {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+/*.division-section {
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}*/
+
+.division-section .text-content .section-title {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.division-section video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .division-section {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+    }
+    .division-section .text-content {
+        width: 100%;
+        padding: 24px 10px 16px 20px;
+        background: #f5f5f5;
+        z-index: 2;
+        position: relative;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .img-division {
+        width: 60vw !important;
+        max-width: 220px;
+        margin-bottom: 0;
+        margin: 50px auto 0 auto;
+        display: block;
+    }
+    .division-section .media-content {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .division-section .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+    .division-section .cta-button {
+        margin-bottom: 0;
+    }
+}
+
+.stats-section {
+    position: relative;
+    min-height: 340px;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    z-index: 1;
+}
+.stats-bg-video {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+.stats-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 188, 212, 0.85);
+    z-index: 2;
+}
+.stats-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    /*justify-content: center;*/
+}
+.stats-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.stats-label {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #eaf6fa;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+@media (max-width: 768px) {
+    .stats-section {
+        height: auto;
+        min-height: 260px;
+        padding: 40px 0;
+    }
+    .stats-number {
+        font-size: 2rem;
+    }
+    .stats-label {
+        font-size: 0.95rem;
+    }
+}
+
+.stats-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+.stats-number {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+.stats-label {
+    font-size: clamp(1.1rem, 2.2vw, 2.2rem);
+    font-weight: 600;
+    color: #eaf6fa;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+@media (max-width: 991px) {
+    .stats-number {
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+    .stats-label {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+    }
+}
+@media (max-width: 600px) {
+    .stats-col {
+        margin-bottom: 2rem;
+    }
+}
+
+.stats-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0;
+}
+
+.stats-number {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.7rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.stats-label {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    color: #eaf6fa;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+    .stats-number {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+    .stats-label {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+    .stats-content .row {
+        gap: 1.2rem;
+    }
+}
+@media (max-width: 600px) {
+    .stats-col {
+        margin-bottom: 2rem;
+    }
+    .stats-content .row {
+        gap: 0.5rem;
+    }
+}
+
+.stats-content, .stats-section {
+    height: 100%;
+    min-height: 340px;
+}
+.stats-col {
+    min-height: 220px;
+    height: 100%;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+.stats-number {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.7rem;
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+.stats-label {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-weight: 500;
+    color: #eaf6fa;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+@media (max-width: 991px) {
+    .stats-number {
+        font-size: clamp(1.5rem, 7vw, 2.5rem);
+    }
+    .stats-label {
+        font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+    .stats-col {
+        min-height: 140px;
+    }
+}
+@media (max-width: 600px) {
+    .stats-col {
+        margin-bottom: 2rem;
+        min-height: 100px;
     }
 }

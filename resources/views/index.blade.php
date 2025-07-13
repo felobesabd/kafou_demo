@@ -22,6 +22,7 @@
         </div>
         <a href="{{ url('/welcome-kafou') }}" class="cta-button">Mission & Vision</a>
     </div>
+
     <!-- Strategy Section (Second Section) -->
     <div class="scrollify main-section fullscreen-section">
         <div class="overlay"></div>
@@ -32,8 +33,9 @@
         <h3 class="section-title">Why Kafou Medical?</h3>
         <a href="{{ url('/why-kafou') }}" class="cta-button">Read More</a>
     </div>
-    <!-- Dribbble Section (forth Section) -->
-    <div class="scrollify main-section dribbble-section">
+
+    <!-- Dribbble Section (forth Section) Division -->
+    {{--<div class="scrollify main-section dribbble-section">
         <div class="text-content">
             <h4 class="section-title">Divisions</h4>
             <a href="#" class="cta-button text-dark">More</a>
@@ -70,7 +72,121 @@
                 </a>
             </div>
         </div>
+    </div>--}}
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/Anethesia.png') }}" alt="Anethesia Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
     </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/Surgery.png') }}" alt="Surgery Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_1.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/IVF & Genetics.png') }}" alt="IVF & Genetics Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_2.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/Respiratory.png') }}" alt="Respiratory Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_3.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/sleep disoprders.png') }}" alt="Sleep Disorders Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_4.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content">
+            <img class="img-division" src="{{ asset('assets/images/Nursing & ICU.png') }}" alt="Nursing and ICU Image">
+            <h4 class="section-title">Divisions</h4>
+            <a href="#" class="cta-button text-dark">More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_5.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="scrollify main-section stats-section">
+        <video class="stats-bg-video" autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="stats-overlay"></div>
+        <div class="stats-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-6 col-md-3 col-lg-3 mb-4 mb-md-0">
+                    <div class="stats-number countup" data-count="512">0</div>
+                    <div class="stats-label">HAPPY CLIENTS</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3 mb-4 mb-md-0">
+                    <div class="stats-number countup" data-count="13493">0</div>
+                    <div class="stats-label">SUCCESSFULLY<br>FULFILLED ORDERS</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="stats-number countup" data-count="3">0</div>
+                    <div class="stats-label">OFFICES IN KSA</div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-3">
+                    <div class="stats-number countup" data-count="3">0</div>
+                    <div class="stats-label">WAREHOUSES</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Partners and Clients Sections (show-images-section) -->
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
@@ -87,6 +203,7 @@
             </div>
         </div>
     </div>
+
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
             <div class="row align-items-center">
@@ -102,6 +219,7 @@
             </div>
         </div>
     </div>
+
     <!-- Showcase Section (Section Seven) -->
     <div class="scrollify main-section split-section">
         <div class="text-content">
@@ -119,9 +237,50 @@
             </video>
         </div>
     </div>
+
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-scrollify@1.0.21/jquery.scrollify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-@endsection 
+    <script>
+    function animateCountUp(el, target, duration = 2000) {
+        let start = 0;
+        let startTime = null;
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            let progress = Math.min((timestamp - startTime) / duration, 1);
+            el.textContent = Math.floor(progress * (target - start) + start);
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            } else {
+                el.textContent = target;
+            }
+        }
+        requestAnimationFrame(step);
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        const counters = document.querySelectorAll('.countup');
+        let animated = false;
+        function runAnimation() {
+            if (animated) return;
+            counters.forEach(counter => {
+                animateCountUp(counter, parseInt(counter.getAttribute('data-count')));
+            });
+            animated = true;
+        }
+        const statsSection = document.querySelector('.stats-section');
+        if ('IntersectionObserver' in window && statsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    runAnimation();
+                    observer.disconnect();
+                }
+            }, { threshold: 0.3 });
+            observer.observe(statsSection);
+        } else {
+            runAnimation();
+        }
+    });
+    </script>
+@endsection
