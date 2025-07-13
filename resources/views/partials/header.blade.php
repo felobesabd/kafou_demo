@@ -81,7 +81,7 @@
           </div>
           <section class="offices">
             <address>
-              <a href="https://goo.gl/maps/HduwGVHBdnpbPmj29" target="_blank"
+              <a href="{{ url('/') }}"
                  rel="noopener noreferrer" class="city">
                 Kafou
               </a>
@@ -103,4 +103,4 @@
       </button>
     </div>
   </div>
-</header> 
+</header>

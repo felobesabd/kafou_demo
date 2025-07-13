@@ -74,7 +74,18 @@
         </div>
     </div>--}}
 
-    <div class="scrollify main-section division-section">
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/anesthsia.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">Anesthesia</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
+
+    {{--<div class="scrollify main-section division-section">
         <div class="text-content">
             <img class="img-division" src="{{ asset('assets/images/Anethesia.png') }}" alt="Anethesia Image">
             <h4 class="section-title">Divisions</h4>
@@ -86,7 +97,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-    </div>
+    </div>--}}
 
     <div class="scrollify main-section division-section">
         <div class="text-content">
@@ -96,7 +107,7 @@
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_1.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/videos/surgry.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -110,7 +121,7 @@
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_2.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/videos/ivf&genetics.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -124,7 +135,7 @@
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_3.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/videos/respiratory.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -138,7 +149,7 @@
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_4.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/videos/sleep&disorders.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -152,7 +163,7 @@
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_5.mp4') }}" type="video/mp4">
+                <source src="{{ asset('assets/videos/nursing&ICU.mp4') }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -229,6 +240,27 @@
                 the importance that behaving fairly will reflect on our partners’ reputation.
             </p>
             <a href="#" class="cta-button text-dark">Read More</a>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <div class="scrollify main-section division-section">
+        <div class="text-content careers-text-content">
+            <h2 class="careers-title">Careers</h2>
+            <ul>
+                <li class="careers-links">
+                    <a>Job Openings</a>
+                </li>
+
+                <li class="careers-links">
+                    <a>Direct Apply</a>
+                </li>
+            </ul>
         </div>
         <div class="media-content">
             <video autoplay muted loop playsinline>

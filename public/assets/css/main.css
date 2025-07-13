@@ -3258,6 +3258,11 @@ main#main-carousel-vertically .item-carousel {
         position: relative;
         box-shadow: 0 2px 8px rgba(0,0,0,0.03);
     }
+
+    .division-section .careers-text-content {
+        padding: 70px 10px 16px 20px;
+    }
+
     .img-division {
         width: 60vw !important;
         max-width: 220px;
@@ -3468,3 +3473,28 @@ main#main-carousel-vertically .item-carousel {
         min-height: 100px;
     }
 }
+
+.careers-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.careers-links {
+    font-size: 30px;
+    color: #757272;
+}
+
+/*.highlight-underline {
+    position: relative;
+    display: inline-block;
+}
+.highlight-underline::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0.1em;
+    height: 0.4em;
+    background: rgba(255,255,255,0.18);
+    z-index: -1;
+    border-radius: 0.2em;
+    width: fit-content;
+}*/
