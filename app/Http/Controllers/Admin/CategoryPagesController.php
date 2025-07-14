@@ -33,14 +33,41 @@ class CategoryPagesController extends Controller
 
     public function updateKey(Request $request, $key_id)
     {
-        $request->validate([
-            'value' => 'required|string|max:65535',
-        ]);
-
         $key = PageContent::findOrFail($key_id);
-        $key->update([
-            'value' => $request->value,
-        ]);
+
+        if ($key->is_image == 1) {
+            $request->validate([
+                'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:4096',
+            ]);
+
+            // Start with existing images
+            $imagePaths = [];
+            $old = $key->value;
+            $decoded = json_decode($old, true);
+            if (is_array($decoded)) {
+                $imagePaths = $decoded;
+            } elseif (is_string($old) && !empty($old)) {
+                $imagePaths = [$old];
+            }
+
+            // If new images are uploaded, append them
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images') as $image) {
+                    $path = $image->store('uploads/page_content', 'public');
+                    $imagePaths[] = $path;
+                }
+            }
+            $key->update([
+                'value' => json_encode($imagePaths),
+            ]);
+        } else {
+            $request->validate([
+                'value' => 'required|string|max:65535',
+            ]);
+            $key->update([
+                'value' => $request->value,
+            ]);
+        }
 
         // Clear cache after update
         PageContentHelper::clearCache();

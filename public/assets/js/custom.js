@@ -282,7 +282,7 @@ const partnersCarousel = createCarousel('main-carousel-partners', 2000); // 3.5 
 const clientsCarousel = createCarousel('main-carousel', 2000); // 3 seconds
 
 /*-----------------------------------Section Show Images-----------------------------------------------*/
-const images = [
+/*const images = [
     "Uploads/Partners/b7c561f3-4f54-42f6-8197-edd960312bce.png",
     "Uploads/Partners/e0b97ea9-8016-4f58-87fa-9ca21541be26.png",
     "Uploads/Partners/d64a3c62-d5ca-421c-9fe2-b50b0c78fd07.png",
@@ -327,4 +327,4 @@ function rotateClients() {
 
 // Start both carousels
 setInterval(rotatePartners, 3000);
-setInterval(rotateClients, 3000);
+setInterval(rotateClients, 3000);*/

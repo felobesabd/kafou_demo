@@ -26,7 +26,7 @@
                         @foreach($contents as $content)
                         <tr>
                             <td>
-                                <div class="fw-bold">{{ $content->key }}</div>
+                                <div class="fw-bold">{{ ucwords(str_replace('_', ' ', $content->key)) }}</div>
                             </td>
                             <td class="text-end">
                                 <a href="{{ route('admin.edit.key', $content->id) }}"

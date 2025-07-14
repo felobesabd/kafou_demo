@@ -38,7 +38,7 @@ class PageContentHelper
     {
         Cache::forget('page_content_settings');
         Cache::forget('page_content_all_formatted');
-        
+
         // Clear page-specific caches
         $pages = \App\Models\CategoryPage::pluck('id');
         foreach ($pages as $pageId) {
@@ -75,5 +75,17 @@ class PageContentHelper
                 })
                 ->toArray();
         });
+    }
+
+    /**
+     * Get all content for a specific section of the home page, filtered by section prefix.
+     * Example: getHomeSectionContent('our_partners')
+     * Returns an array of key => value for that section.
+     */
+    public static function getHomeSectionContent($sectionPrefix)
+    {
+        return PageContent::where('key', 'like', $sectionPrefix . '_%')
+            ->pluck('value', 'key')
+            ->toArray();
     }
 }

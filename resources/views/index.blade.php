@@ -85,21 +85,62 @@
         <a href="{{ url('/') }}" class="cta-button">Read More</a>
     </div>
 
-    {{--<div class="scrollify main-section division-section">
-        <div class="text-content">
-            <img class="img-division" src="{{ asset('assets/images/Anethesia.png') }}" alt="Anethesia Image">
-            <h4 class="section-title">Divisions</h4>
-            <a href="#" class="cta-button text-dark">More</a>
-        </div>
-        <div class="media-content">
-            <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>--}}
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/surgry.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">Surgery</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
 
-    <div class="scrollify main-section division-section">
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/ivf&genetics.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">IVF & Genetics</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
+
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/respiratory.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">Respiratory</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
+
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay" style="background-color: rgb(75 75 75 / 31%);"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/sleep&disorders.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">Sleep Disoprders</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
+
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/nursing&ICU.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h4>Divisions</h4>
+        <h3 class="section-title highlight-underline">Nursing & ICU</h3>
+        <a href="{{ url('/') }}" class="cta-button">Read More</a>
+    </div>
+
+    {{--<div class="scrollify main-section division-section">
         <div class="text-content">
             <img class="img-division" src="{{ asset('assets/images/Surgery.png') }}" alt="Surgery Image">
             <h4 class="section-title">Divisions</h4>
@@ -167,7 +208,7 @@
                 Your browser does not support the video tag.
             </video>
         </div>
-    </div>
+    </div>--}}
 
     <!-- Stats Section -->
     <div class="scrollify main-section stats-section">
@@ -199,32 +240,68 @@
     </div>
 
     <!-- Partners and Clients Sections (show-images-section) -->
+    @php
+        $partnersContent = \App\Helpers\PageContentHelper::getHomeSectionContent('our_partners');
+        $partnersImages = [];
+        foreach ($partnersContent as $key => $value) {
+            if (strpos($key, 'image') !== false) {
+                $decoded = json_decode($value, true);
+                if (is_array($decoded)) {
+                    foreach ($decoded as $img) {
+                        $partnersImages[] = $img;
+                    }
+                } else {
+                    $partnersImages[] = $value;
+                }
+            }
+        }
+    @endphp
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
             <div class="row align-items-center">
                 <div class="carousel-text">
-                    <h2 class="carousel-title">Our Partners</h2>
-                    <a href="#" class="cta-button">View More</a>
+                    <h2 class="carousel-title">{!! strip_tags($partnersContent['our_partners_title'] ?? 'Our Partners', '<b><i><span><strong><em>') !!}</h2>
+                    <a href="#" class="cta-button">
+                        {!! strip_tags($partnersContent['our_partners_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
+                    </a>
                 </div>
                 <div class="carousel-container">
                     <div class="single-carousel">
-                        <img id="carousel-image" src="{{ asset('Uploads/Partners/b7c561f3-4f54-42f6-8197-edd960312bce.png') }}" alt="Partner">
+                        <img id="carousel-image" src="{{ isset($partnersImages[0]) ? asset('storage/' . $partnersImages[0]) : '' }}" alt="Partner">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
+    @php
+        $clientsContent = \App\Helpers\PageContentHelper::getHomeSectionContent('our_clients');
+        $clientsImages = [];
+        foreach ($clientsContent as $key => $value) {
+            if (strpos($key, 'image') !== false) {
+                $decoded = json_decode($value, true);
+                if (is_array($decoded)) {
+                    foreach ($decoded as $img) {
+                        $clientsImages[] = $img;
+                    }
+                } else {
+                    $clientsImages[] = $value;
+                }
+            }
+        }
+    @endphp
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
             <div class="row align-items-center">
                 <div class="carousel-text">
-                    <h2 class="carousel-title">Our Clients</h2>
-                    <a href="#" class="cta-button">View More</a>
+                    <h2 class="carousel-title">{!! strip_tags($clientsContent['our_clients_title'] ?? 'Our Clients', '<b><i><span><strong><em>') !!}</h2>
+                    <a href="#" class="cta-button">
+                        {!! strip_tags($clientsContent['our_clients_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
+                    </a>
                 </div>
                 <div class="carousel-container">
                     <div class="single-carousel">
-                        <img id="carousel-image-clients" src="{{ asset('Uploads/Clients/d224d5dd-b1d9-44e1-bdce-e8d46299090a.png') }}" alt="Clients">
+                        <img id="carousel-image-clients" src="{{ isset($clientsImages[0]) ? asset('storage/' . $clientsImages[0]) : '' }}" alt="Client">
                     </div>
                 </div>
             </div>
@@ -276,43 +353,92 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     <script>
-    function animateCountUp(el, target, duration = 2000) {
-        let start = 0;
-        let startTime = null;
-        function step(timestamp) {
-            if (!startTime) startTime = timestamp;
-            let progress = Math.min((timestamp - startTime) / duration, 1);
-            el.textContent = Math.floor(progress * (target - start) + start);
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                el.textContent = target;
-            }
-        }
-        requestAnimationFrame(step);
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-        const counters = document.querySelectorAll('.countup');
-        let animated = false;
-        function runAnimation() {
-            if (animated) return;
-            counters.forEach(counter => {
-                animateCountUp(counter, parseInt(counter.getAttribute('data-count')));
-            });
-            animated = true;
-        }
-        const statsSection = document.querySelector('.stats-section');
-        if ('IntersectionObserver' in window && statsSection) {
-            const observer = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    runAnimation();
-                    observer.disconnect();
+        function animateCountUp(el, target, duration = 2000) {
+            let start = 0;
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                let progress = Math.min((timestamp - startTime) / duration, 1);
+                el.textContent = Math.floor(progress * (target - start) + start);
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target;
                 }
-            }, { threshold: 0.3 });
-            observer.observe(statsSection);
-        } else {
-            runAnimation();
+            }
+
+            requestAnimationFrame(step);
         }
-    });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const counters = document.querySelectorAll('.countup');
+            let animated = false;
+
+            function runAnimation() {
+                if (animated) return;
+                counters.forEach(counter => {
+                    animateCountUp(counter, parseInt(counter.getAttribute('data-count')));
+                });
+                animated = true;
+            }
+
+            const statsSection = document.querySelector('.stats-section');
+            if ('IntersectionObserver' in window && statsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        runAnimation();
+                        observer.disconnect();
+                    }
+                }, {threshold: 0.3});
+                observer.observe(statsSection);
+            } else {
+                runAnimation();
+            }
+        });
+
+        // Dynamically generated images array from backend
+        const images = [
+            @foreach($partnersImages as $img)
+                "{{ asset('storage/' . $img) }}",
+            @endforeach
+        ];
+
+        let currentIndexPartners = 0;
+        const imageEl = document.getElementById("carousel-image");
+
+        function rotatePartners() {
+            if (!images.length) return;
+            currentIndexPartners = (currentIndexPartners + 1) % images.length;
+            imageEl.style.opacity = 0;
+            setTimeout(() => {
+                imageEl.src = images[currentIndexPartners];
+                imageEl.style.opacity = 1;
+            }, 300); // fade out/in effect
+        }
+
+        setInterval(rotatePartners, 3000); // Change every 3 seconds
+
+
+        const imagesClients = [
+            @foreach($clientsImages as $img)
+                "{{ asset('storage/' . $img) }}",
+            @endforeach
+        ];
+
+        let currentIndexClients = 0;
+        const imageElClients = document.getElementById("carousel-image-clients");
+
+        function rotateClients() {
+            if (!imagesClients.length) return;
+            currentIndexClients = (currentIndexClients + 1) % imagesClients.length;
+            imageElClients.style.opacity = 0;
+            setTimeout(() => {
+                imageElClients.src = imagesClients[currentIndexClients];
+                imageElClients.style.opacity = 1;
+            }, 500);
+        }
+
+        setInterval(rotateClients, 3000);
     </script>
 @endsection
