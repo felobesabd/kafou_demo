@@ -8,6 +8,57 @@
 @endsection
 
 @section('content')
+    {{--<div class="scrollify main-section division-section">
+        <div class="text-content careers-text-content">
+            <h2 class="careers-title">Careers</h2>
+            <ul>
+                <li class="careers-links">
+                    <a>Job Openings</a>
+                </li>
+
+                <li class="careers-links">
+                    <a>Direct Apply</a>
+                </li>
+            </ul>
+        </div>
+        <div class="media-content">
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>--}}
+
+    @php
+        $keys = \App\Helpers\PageContentHelper::getPageContent('home');
+        $partnersImages = [];
+        foreach ($keys as $key => $value) {
+            if (strpos($key, 'our_partners_images') !== false) {
+                $decoded = json_decode($value, true);
+                if (is_array($decoded)) {
+                    foreach ($decoded as $img) {
+                        $partnersImages[] = $img;
+                    }
+                } else {
+                    $partnersImages[] = $value;
+                }
+            }
+        }
+
+        $clientsImages = [];
+        foreach ($keys as $key => $value) {
+            if (strpos($key, 'our_clients_images') !== false) {
+                $decoded = json_decode($value, true);
+                if (is_array($decoded)) {
+                    foreach ($decoded as $img) {
+                        $clientsImages[] = $img;
+                    }
+                } else {
+                    $clientsImages[] = $value;
+                }
+            }
+        }
+    @endphp
     <!-- Full Screen Video Section -->
     <div class="scrollify main-section fullscreen-section">
         <div class="overlay"></div>
@@ -15,16 +66,42 @@
             <source src="{{ asset('assets/videos/kafou-medical-video.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <h3 class="section-title">Welcome to Kafou Medical</h3>
+        <h3 class="section-title">
+            {!! strip_tags($keys['section_welcome_title'] ?? 'Welcome to Kafou Medical', '<b><i><span><strong><em>') !!}
+        </h3>
         <div class="welcome-main-title">
-            Empowering Global Healthcare in the GCC
-            We connect leading medical brands with the region’s most trusted providers.
+            {!! strip_tags($keys['section_welcome_paragraph'] ?? 'Empowering Global Healthcare in the GCC
+            We connect leading medical brands with the region’s most trusted providers.', '<b><i><span><strong><em>') !!}
         </div>
-        <a href="{{ url('/welcome-kafou') }}" class="cta-button">Mission & Vision</a>
+        <a href="{{ url('/welcome-kafou') }}" class="cta-button">
+            {!! strip_tags($keys['section_welcome_button'] ?? 'Mission & Vision', '<b><i><span><strong><em>') !!}
+        </a>
+    </div>
+
+    <div class="scrollify main-section red-split-section">
+        <!-- Mobile layout -->
+        <div class="logo-mobile-center d-md-none text-center pt-4">
+            <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
+        </div>
+        <div class="mobile-bottom-content d-md-none">
+            <h2 class="section-title text-start">Why Kafou Medical?</h2>
+            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">Read More</a>
+        </div>
+
+        <!-- Desktop layout -->
+        <div class="text-content d-none d-md-flex">
+            <h2 class="section-title">Why Kafou Medical</h2>
+            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">Read More</a>
+        </div>
+        <div class="media-content-red d-none d-md-block">
+            <div class="logo-wrapper">
+                <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+            </div>
+        </div>
     </div>
 
     <!-- Strategy Section (Second Section) -->
-    <div class="scrollify main-section fullscreen-section">
+    {{--<div class="scrollify main-section fullscreen-section">
         <div class="overlay"></div>
         <video autoplay muted loop playsinline>
             <source src="{{ asset('assets/videos/kafou-medical-video-2.mp4') }}" type="video/mp4">
@@ -32,7 +109,7 @@
         </video>
         <h3 class="section-title">Why Kafou Medical?</h3>
         <a href="{{ url('/why-kafou') }}" class="cta-button">Read More</a>
-    </div>
+    </div>--}}
 
     <!-- Dribbble Section (forth Section) Division -->
     {{--<div class="scrollify main-section dribbble-section">
@@ -103,7 +180,7 @@
             Your browser does not support the video tag.
         </video>
         <h4>Divisions</h4>
-        <h3 class="section-title highlight-underline">IVF & Genetics</h3>
+        <h3 class="section-title highlight-underline">LAB Solutions</h3>
         <a href="{{ url('/') }}" class="cta-button">Read More</a>
     </div>
 
@@ -240,29 +317,13 @@
     </div>
 
     <!-- Partners and Clients Sections (show-images-section) -->
-    @php
-        $partnersContent = \App\Helpers\PageContentHelper::getHomeSectionContent('our_partners');
-        $partnersImages = [];
-        foreach ($partnersContent as $key => $value) {
-            if (strpos($key, 'image') !== false) {
-                $decoded = json_decode($value, true);
-                if (is_array($decoded)) {
-                    foreach ($decoded as $img) {
-                        $partnersImages[] = $img;
-                    }
-                } else {
-                    $partnersImages[] = $value;
-                }
-            }
-        }
-    @endphp
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
             <div class="row align-items-center">
                 <div class="carousel-text">
-                    <h2 class="carousel-title">{!! strip_tags($partnersContent['our_partners_title'] ?? 'Our Partners', '<b><i><span><strong><em>') !!}</h2>
+                    <h2 class="carousel-title">{!! strip_tags($keys['our_partners_title'] ?? 'Our Partners', '<b><i><span><strong><em>') !!}</h2>
                     <a href="#" class="cta-button">
-                        {!! strip_tags($partnersContent['our_partners_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
+                        {!! strip_tags($keys['our_partners_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
                     </a>
                 </div>
                 <div class="carousel-container">
@@ -274,29 +335,13 @@
         </div>
     </div>
 
-    @php
-        $clientsContent = \App\Helpers\PageContentHelper::getHomeSectionContent('our_clients');
-        $clientsImages = [];
-        foreach ($clientsContent as $key => $value) {
-            if (strpos($key, 'image') !== false) {
-                $decoded = json_decode($value, true);
-                if (is_array($decoded)) {
-                    foreach ($decoded as $img) {
-                        $clientsImages[] = $img;
-                    }
-                } else {
-                    $clientsImages[] = $value;
-                }
-            }
-        }
-    @endphp
     <div class="scrollify main-section show-images-section white-logo-theme">
         <div class="container carousel-content">
             <div class="row align-items-center">
                 <div class="carousel-text">
-                    <h2 class="carousel-title">{!! strip_tags($clientsContent['our_clients_title'] ?? 'Our Clients', '<b><i><span><strong><em>') !!}</h2>
+                    <h2 class="carousel-title">{!! strip_tags($keys['our_clients_title'] ?? 'Our Clients', '<b><i><span><strong><em>') !!}</h2>
                     <a href="#" class="cta-button">
-                        {!! strip_tags($clientsContent['our_clients_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
+                        {!! strip_tags($keys['our_clients_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
                     </a>
                 </div>
                 <div class="carousel-container">
@@ -319,31 +364,39 @@
             <a href="#" class="cta-button text-dark">Read More</a>
         </div>
         <div class="media-content">
-            <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="logo-wrapper">
+                <img class="" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+            </div>
         </div>
     </div>
 
-    <div class="scrollify main-section division-section">
-        <div class="text-content careers-text-content">
-            <h2 class="careers-title">Careers</h2>
+    <div class="scrollify main-section red-split-section">
+        <!-- Mobile layout -->
+        <div class="logo-mobile-center d-md-none text-center pt-4">
+            <h2 class="careers-header">Careers</h2>
+        </div>
+        <div class="mobile-bottom-content careers-buttons d-md-none">
+            <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
+            <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
+        </div>
+
+        <!-- Desktop layout -->
+        <div class="text-content d-none d-md-flex">
+            <h2 class="section-title">Careers</h2>
             <ul>
                 <li class="careers-links">
-                    <a>Job Openings</a>
+                    <a href="{{ url('/') }}" style="color: #757272;">Job Openings</a>
                 </li>
 
                 <li class="careers-links">
-                    <a>Direct Apply</a>
+                    <a href="{{ url('/') }}" style="color: #757272;">Direct Apply</a>
                 </li>
             </ul>
         </div>
-        <div class="media-content">
-            <video autoplay muted loop playsinline>
-                <source src="{{ asset('assets/videos/medical_6.mp4') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="media-content-red d-none d-md-block">
+            <div class="logo-wrapper">
+                <h2 class="careers-header">Careers</h2>
+            </div>
         </div>
     </div>
 

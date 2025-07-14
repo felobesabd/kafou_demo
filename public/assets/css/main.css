@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Custom Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 10px;
@@ -336,6 +340,7 @@ body.menu-open {
     position: relative;
     overflow: hidden;
     height: 100%;
+    background-color: #17898c;
 }
 
 /* Mobile styles */
@@ -382,7 +387,7 @@ body.menu-open {
     padding: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     background: white;
     color: #000;
 }
@@ -399,7 +404,7 @@ body.menu-open {
 }
 
 .red-split-section .media-content-red img {
-    width: 200px;
+    width: 300px;
     height: auto;
 }
 
@@ -540,8 +545,8 @@ body.menu-open {
         padding: 40px 20px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        justify-content: end;
+        align-items: center;
     }
 
     .red-split-section .mobile-text {
@@ -3498,3 +3503,61 @@ main#main-carousel-vertically .item-carousel {
     border-radius: 0.2em;
     width: fit-content;
 }*/
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-wrapper img {
+    width: 300px;
+}
+
+.careers-header {
+    font-size: 60px;
+    font-weight: 700;
+    transform: scale3d(1.5, 1.5, 1.5);
+}
+
+@media (max-width: 768px) {
+    .main-section {
+        background-color: #1b8b8b !important; /* your green */
+    }
+
+    .main-section .headline-content {
+        margin-top: 2rem; /* push text further down */
+    }
+
+    .logo-mobile-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .logo-mobile-center img {
+        max-width: 260px !important;
+    }
+
+    .mobile-bottom-content {
+        padding: 10px 0 50px 20px;
+    }
+
+    .mobile-bottom-content .cta-button {
+        border: 2px solid #d6f0f1 !important;
+        color: white !important;
+    }
+
+    .careers-header {
+        font-size: 45px;
+    }
+
+    .careers-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 10px 50px 10px !important;
+    }
+}

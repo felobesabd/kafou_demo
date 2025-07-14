@@ -54,6 +54,14 @@ function updateHeaderForSection($section) {
     const $headerDriver  = $('.header-divider');
     const $logoImg       = $('#main-logo');
 
+    const isMobile = window.innerWidth <= 768;
+
+    // change logo mobile only: use white logo for red-split-section
+    if (isMobile && $section.hasClass('red-split-section')) {
+        $logoImg.attr('src', 'assets/images/kafou_white_logo.png');
+        return;
+    }
+
     const hasDarkTheme = $section.hasClass('dribbble-section');
     const hasLightLogoOnly = $section.hasClass('footer-wrapper')
         || $section.hasClass('fullscreen-section') || $section.hasClass('white-logo-theme')

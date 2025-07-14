@@ -88,4 +88,11 @@ class PageContentHelper
             ->pluck('value', 'key')
             ->toArray();
     }
+
+    public static function getPageContent($pageName)
+    {
+        return PageContent::where('page_name', $pageName)
+            ->pluck('value', 'key')
+            ->toArray();
+    }
 }

@@ -47,4 +47,8 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     // Route::get('all-content', [CategoryPagesController::class, 'viewAllContent'])->name('all.content');
 });
 
+Route::get('/home', function () {
+    return redirect('/admin/dashboard');
+})->middleware('admin');
+
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout']);
