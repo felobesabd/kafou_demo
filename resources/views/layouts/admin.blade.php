@@ -132,6 +132,12 @@
                                 <i class="fas fa-database me-2"></i>
                                 All Content
                             </a>--}}
+
+                            <a class="nav-link {{ request()->routeIs('admin.sections.*') ? 'active' : '' }}"
+                               href="{{ route('admin.sections.index') }}">
+                                <i class="fas fa-th-list me-2"></i>
+                                Sections
+                            </a>
                         </nav>
                     </div>
                 </div>

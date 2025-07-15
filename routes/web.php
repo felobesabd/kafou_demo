@@ -32,6 +32,10 @@ Route::get('/mission-vision', function () {
     return view('mission-vision');
 });
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 // Authentication routes
 Auth::routes();
 
@@ -39,6 +43,8 @@ Auth::routes();
 Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     // Route::resource('users', UserController::class);
+
+    Route::resource('sections', \App\Http\Controllers\Admin\SectionController::class);
 
     Route::get('all-pages', [CategoryPagesController::class, 'getAllCategoryPages'])->name('all.pages');
     Route::get('all-keys-page/{page_id}', [CategoryPagesController::class, 'getAllKeysForPage'])->name('contents.pages');

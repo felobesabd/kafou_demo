@@ -59,46 +59,126 @@
             }
         }
     @endphp
-    <!-- Full Screen Video Section -->
-    <div class="scrollify main-section fullscreen-section">
-        <div class="overlay"></div>
-        <video autoplay muted loop playsinline>
-            <source src="{{ asset('assets/videos/kafou-medical-video.mp4') }}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <h3 class="section-title">
-            {!! strip_tags($keys['section_welcome_title'] ?? 'Welcome to Kafou Medical', '<b><i><span><strong><em>') !!}
-        </h3>
-        <div class="welcome-main-title">
-            {!! strip_tags($keys['section_welcome_paragraph'] ?? 'Empowering Global Healthcare in the GCC
-            We connect leading medical brands with the region’s most trusted providers.', '<b><i><span><strong><em>') !!}
-        </div>
-        <a href="{{ url('/welcome-kafou') }}" class="cta-button">
-            {!! strip_tags($keys['section_welcome_button'] ?? 'Mission & Vision', '<b><i><span><strong><em>') !!}
-        </a>
-    </div>
 
-    <div class="scrollify main-section red-split-section main-section-green">
-        <!-- Mobile layout -->
-        <div class="logo-mobile-center d-md-none text-center pt-4">
-            <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
-        </div>
-        <div class="mobile-bottom-content d-md-none">
-            <h2 class="section-title text-start">Why Kafou Medical?</h2>
-            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">Read More</a>
-        </div>
+    {{--@php
+        $sections = \App\Helpers\PageContentHelper::getAllSections();
+    @endphp
 
-        <!-- Desktop layout -->
-        <div class="text-content d-none d-md-flex">
-            <h2 class="section-title">Why Kafou Medical</h2>
-            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">Read More</a>
+    @foreach($sections as $section)
+        @switch($section->section_key)
+            @case('welcome_kafou')
+                --}}{{-- Welcome Section --}}{{--
+                <div class="scrollify main-section fullscreen-section">
+                    <div class="overlay"></div>
+                    <video autoplay muted loop playsinline>
+                        <source src="{{ asset('assets/videos/kafou-medical-video.mp4') }}" type="video/mp4">
+                    </video>
+                    <h3 class="section-title">
+                        {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
+                    </h3>
+                    <div class="welcome-main-title">
+                        {!! strip_tags($section->text, '<b><i><span><strong><em><br><hr>') !!}
+                    </div>
+                    @if($section->button)
+                        <a href="{{ url('/welcome-kafou') }}" class="cta-button">
+                            {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
+                        </a>
+                    @endif
+                </div>
+                @break
+
+            @case('why_kafou')
+                --}}{{-- Why Kafou Section --}}{{--
+                <div class="scrollify main-section red-split-section main-section-green">
+                    <div class="logo-mobile-center d-md-none text-center pt-4">
+                        <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
+                    </div>
+                    <div class="mobile-bottom-content d-md-none">
+                        <h2 class="section-title text-start">
+                            {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
+                        </h2>
+                        <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                            {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
+                        </a>
+                    </div>
+
+                    <div class="text-content d-none d-md-flex">
+                        <h2 class="section-title">
+                            {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
+                        </h2>
+                        <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                            {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
+                        </a>
+                    </div>
+                    <div class="media-content-red d-none d-md-block">
+                        <div class="logo-wrapper">
+                            <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+                        </div>
+                    </div>
+                </div>
+                @break
+
+                --}}{{-- Add more cases for other sections as needed --}}{{--
+        @endswitch
+    @endforeach--}}
+
+    {{--@php
+        $welcome  = \App\Helpers\PageContentHelper::getSectionByKey('welcome_kafou');
+        $whyKafou = \App\Helpers\PageContentHelper::getSectionByKey('why_kafou');
+    @endphp
+
+    @if($welcome)
+        <!-- Full Screen Video Section -->
+        <div class="scrollify main-section fullscreen-section">
+            <div class="overlay"></div>
+            <video autoplay muted loop playsinline>
+                <source src="{{ asset('assets/videos/kafou-medical-video.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h3 class="section-title">
+                {!! strip_tags($welcome->title ?? 'Welcome to Kafou Medical', '<b><br><hr><i><span><strong><em>') !!}
+            </h3>
+            <div class="welcome-main-title">
+                {!! strip_tags($welcome->text ?? 'Empowering Global Healthcare in the GCC
+                We connect leading medical brands with the region’s most trusted providers.', '<b><br><hr><i><span><strong><em>') !!}
+            </div>
+            <a href="{{ url('/welcome-kafou') }}" class="cta-button">
+                {!! strip_tags($welcome->button ?? 'Mission & Vision', '<b><i><span><strong><em>') !!}
+            </a>
         </div>
-        <div class="media-content-red d-none d-md-block">
-            <div class="logo-wrapper">
-                <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+    @endif
+
+    @if($whyKafou)
+        <div class="scrollify main-section red-split-section main-section-green">
+            <!-- Mobile layout -->
+            <div class="logo-mobile-center d-md-none text-center pt-4">
+                <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
+            </div>
+            <div class="mobile-bottom-content d-md-none">
+                <h2 class="section-title text-start">
+                    {!! strip_tags($whyKafou->title ?? 'Why Kafou Medical?', '<b><i><span><strong><em><br><hr>') !!}
+                </h2>
+                <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                    {!! strip_tags($whyKafou->button ?? 'Read More', '<b><br><hr><i><span><strong><em>') !!}
+                </a>
+            </div>
+
+            <!-- Desktop layout -->
+            <div class="text-content d-none d-md-flex">
+                <h2 class="section-title">
+                    {!! strip_tags($whyKafou->title ?? 'Why Kafou Medical?', '<b><i><span><strong><em><br><hr>') !!}
+                </h2>
+                <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                    {!! strip_tags($whyKafou->button ?? 'Read More', '<b><br><hr><i><span><strong><em>') !!}
+                </a>
+            </div>
+            <div class="media-content-red d-none d-md-block">
+                <div class="logo-wrapper">
+                    <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+                </div>
             </div>
         </div>
-    </div>
+    @endif--}}
 
     <!-- Strategy Section (Second Section) -->
     {{--<div class="scrollify main-section fullscreen-section">
@@ -151,6 +231,54 @@
         </div>
     </div>--}}
 
+
+    <!-- Full Screen Video Section -->
+    <div class="scrollify main-section fullscreen-section">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="{{ asset('assets/videos/kafou-medical-video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3 class="section-title">
+            {!! strip_tags($keys['section_welcome_title'] ?? 'Welcome to Kafou Medical', '<b><i><span><strong><em>') !!}
+        </h3>
+        <div class="welcome-main-title">
+            {!! strip_tags($keys['section_welcome_paragraph'] ?? 'Empowering Global Healthcare in the GCC
+            We connect leading medical brands with the region’s most trusted providers.', '<b><i><span><strong><em>') !!}
+        </div>
+        <a href="{{ url('/welcome-kafou') }}" class="cta-button">
+            {!! strip_tags($keys['section_welcome_button'] ?? 'Mission & Vision', '<b><i><span><strong><em>') !!}
+        </a>
+    </div>
+
+    <div class="scrollify main-section red-split-section main-section-green">
+        <!-- Mobile layout -->
+        <div class="logo-mobile-center d-md-none text-center pt-4">
+            <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
+        </div>
+        <div class="mobile-bottom-content d-md-none">
+            <h2 class="section-title text-start">Why Kafou Medical?</h2>
+            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                Read More
+            </a>
+        </div>
+
+        <!-- Desktop layout -->
+        <div class="text-content d-none d-md-flex">
+            <h2 class="section-title">
+               Why Kafou Medical?
+            </h2>
+            <a href="{{ url('/why-kafou') }}" class="cta-button text-dark">
+                Read More
+            </a>
+        </div>
+        <div class="media-content-red d-none d-md-block">
+            <div class="logo-wrapper">
+                <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" />
+            </div>
+        </div>
+    </div>
+
     <div class="scrollify main-section fullscreen-section">
         <div class="overlay"></div>
         <video autoplay muted loop playsinline>
@@ -202,7 +330,7 @@
             Your browser does not support the video tag.
         </video>
         <h4>Divisions</h4>
-        <h3 class="section-title highlight-underline">Sleep Disoprders</h3>
+        <h3 class="section-title highlight-underline">Sleep Disorders</h3>
         <a href="{{ url('/') }}" class="cta-button">Read More</a>
     </div>
 
@@ -373,8 +501,9 @@
     <div class="scrollify main-section red-split-section main-section-green">
         <!-- Mobile layout -->
         <div class="logo-mobile-center d-md-none text-center pt-4">
-            <h2 class="careers-header">Careers</h2>
+            <img class="img-fluid" src="assets/images/career_3.png" alt="Careers Image" style="max-width: 90px;">
         </div>
+
         <div class="mobile-bottom-content careers-buttons d-md-none">
             <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
             <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
@@ -383,19 +512,17 @@
         <!-- Desktop layout -->
         <div class="text-content d-none d-md-flex">
             <h2 class="section-title">Careers</h2>
-            <ul>
-                <li class="careers-links">
-                    <a href="{{ url('/') }}" style="color: #757272;">Job Openings</a>
-                </li>
 
-                <li class="careers-links">
-                    <a href="{{ url('/') }}" style="color: #757272;">Direct Apply</a>
-                </li>
-            </ul>
+            <div class="careers-buttons">
+                <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
+                <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
+            </div>
+
         </div>
+
         <div class="media-content-red d-none d-md-block">
             <div class="logo-wrapper">
-                <h2 class="careers-header">Careers</h2>
+                <img class="img-fluid" src="assets/images/career_3.png" alt="Careers Image" />
             </div>
         </div>
     </div>

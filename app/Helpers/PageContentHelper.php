@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\Models\PageContent;
+use App\Models\Section;
 use Illuminate\Support\Facades\Cache;
 
 class PageContentHelper
@@ -94,5 +95,21 @@ class PageContentHelper
         return PageContent::where('page_name', $pageName)
             ->pluck('value', 'key')
             ->toArray();
+    }
+
+    public static function getSectionByKey($sectionKey)
+    {
+        $section = Section::where('section_key', $sectionKey)
+            ->where('is_deleted', '=', 0)
+            ->first();
+
+        return $section ? $section : null;
+    }
+
+    public static function getAllSections()
+    {
+        return \App\Models\Section::where('is_deleted', 0)
+            ->orderBy('order')
+            ->get();
     }
 }

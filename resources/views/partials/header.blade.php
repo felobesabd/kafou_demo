@@ -52,11 +52,11 @@
               </li>
             </ul>
             <ul class="menu-secondary">
-              <li class="menu-item-secondary">
+              {{--<li class="menu-item-secondary">
                 <a class="nav-item-secondary" href="#">
                   Join Our Team
                 </a>
-              </li>
+              </li>--}}
               <li class="menu-item-secondary">
                 <a class="nav-item-secondary" href="#" target="_blank" rel="noopener noreferrer">
                   Job Openings
