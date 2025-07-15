@@ -78,7 +78,7 @@
         </a>
     </div>
 
-    <div class="scrollify main-section red-split-section">
+    <div class="scrollify main-section red-split-section main-section-green">
         <!-- Mobile layout -->
         <div class="logo-mobile-center d-md-none text-center pt-4">
             <img class="img-fluid" src="assets/images/kafou_white_logo.png" alt="Kafou Medical Logo" style="max-width: 90px;">
@@ -370,7 +370,7 @@
         </div>
     </div>
 
-    <div class="scrollify main-section red-split-section">
+    <div class="scrollify main-section red-split-section main-section-green">
         <!-- Mobile layout -->
         <div class="logo-mobile-center d-md-none text-center pt-4">
             <h2 class="careers-header">Careers</h2>

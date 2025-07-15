@@ -3522,7 +3522,7 @@ main#main-carousel-vertically .item-carousel {
 }
 
 @media (max-width: 768px) {
-    .main-section {
+    .main-section-green {
         background-color: #1b8b8b !important; /* your green */
     }
 
