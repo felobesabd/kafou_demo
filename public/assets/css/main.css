@@ -9,23 +9,6 @@ a {
 }
 
 /* Custom Scrollbar Styles */
-@media (max-width: 768px) {
-    .scrollify {
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
-    }
-
-    ::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: rgba(23, 137, 140, 0.5);
-        border-radius: 4px;
-    }
-}
-
 ::-webkit-scrollbar {
     width: 10px;
     -webkit-appearance: none;
@@ -3582,5 +3565,28 @@ main#main-carousel-vertically .item-carousel {
         justify-content: center;
         gap: 20px;
         padding: 10px 10px 90px 10px !important;
+    }
+}
+
+/* ======= Mobile Scrollbar Visibility Fix (Safe for Scrollify) ======= */
+@media (max-width: 768px) {
+    body {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin; /* For Firefox */
+    }
+
+    /* WebKit browsers (Chrome, Safari) */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(255, 255, 255, 0.05); /* Slightly visible track */
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(23, 137, 140, 0.5); /* Teal thumb */
+        border-radius: 4px;
     }
 }
