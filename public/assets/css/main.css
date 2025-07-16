@@ -42,13 +42,13 @@ a {
 }
 
 html {
-    overflow-y: scroll;
+    /*overflow: scroll;*/
     -webkit-overflow-scrolling: touch;
 }
 
 html, body {
     height: 100%;
-    overflow: auto;
+    /*overflow: auto;*/
     background: #000;
     -webkit-overflow-scrolling: touch;
 }
@@ -3575,7 +3575,7 @@ main#main-carousel-vertically .item-carousel {
 /* ======= Mobile Scrollbar Visibility Fix (Safe for Scrollify) ======= */
 @media (max-width: 768px) {
     body {
-        overflow-y: scroll;
+        /*overflow-y: scroll;*/
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin; /* For Firefox */
     }

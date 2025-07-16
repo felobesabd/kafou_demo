@@ -125,7 +125,7 @@ function initializeScrollify() {
             section: ".scrollify",
             sectionName: "section-name",
             easing: "easeOutExpo",
-            scrollSpeed: 1100,
+            scrollSpeed: 110,
             offset: 0,
             scrollbars: true,
             standardScrollElements: "",
@@ -134,6 +134,7 @@ function initializeScrollify() {
             updateHash: false,
             touchScroll: true,
             before: function(index, sections) {
+                window.scrollTo(0, 0);
                 // Add active class to current section
                 $(sections[index]).addClass('active').siblings().removeClass('active');
                 const $section = $(sections[index]);
@@ -211,9 +212,13 @@ function enableNormalScrolling() {
 }
 
 // Wait for DOM to be ready
-$(document).ready(function() {
-    // Initial attempt
-    attemptScrollifyInitialization();
+$(document).ready(function () {
+    window.scrollTo(0, 0);
+    history.replaceState(null, null, ' ');
+
+    setTimeout(() => {
+        attemptScrollifyInitialization();
+    }, 1000);
 });
 
 // Wait for all resources to load
