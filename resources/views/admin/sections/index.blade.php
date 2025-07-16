@@ -10,9 +10,9 @@
                 <h5 class="mb-0">All Sections ({{ $sections->total() ?? 0 }})</h5>
             </div>
             <div class="col-md-6 text-end">
-                <a href="{{ route('admin.sections.create') }}" class="btn btn-primary">
+                {{--<a href="{{ route('admin.sections.create') }}" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Add Section
-                </a>
+                </a>--}}
             </div>
         </div>
     </div>
@@ -42,13 +42,13 @@
                                 <a href="{{ route('admin.sections.edit', $section) }}" class="btn btn-sm btn-outline-primary" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <form action="{{ route('admin.sections.destroy', $section) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this section?');">
+                                {{--<form action="{{ route('admin.sections.destroy', $section) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this section?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
                                         <i class="fas fa-trash"></i>
                                     </button>
-                                </form>
+                                </form>--}}
                             </td>
                         </tr>
                         @endforeach

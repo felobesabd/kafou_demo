@@ -11,7 +11,7 @@ class SectionController extends Controller
 {
     public function index()
     {
-        $sections = Section::where('is_deleted', '=', 0)->orderBy('order')->paginate(10);
+        $sections = Section::where('is_deleted', '=', 0)->where('showing_admin', '=', 1)->orderBy('order')->paginate(10);
         return view('admin.sections.index', compact('sections'));
     }
 

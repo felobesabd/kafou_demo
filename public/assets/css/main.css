@@ -404,7 +404,7 @@ body.menu-open {
 }
 
 .red-split-section .media-content-red img {
-    width: 300px;
+    width: 180px;
     height: auto;
 }
 
@@ -3513,7 +3513,7 @@ main#main-carousel-vertically .item-carousel {
 }
 
 .logo-wrapper img {
-    width: 300px;
+    width: 180px;
 }
 
 .careers-header {
@@ -3544,7 +3544,7 @@ main#main-carousel-vertically .item-carousel {
     }
 
     .logo-mobile-center img {
-        max-width: 260px !important;
+        max-width: 160px !important;
     }
 
     .mobile-bottom-content {
@@ -3565,6 +3565,10 @@ main#main-carousel-vertically .item-carousel {
         justify-content: center;
         gap: 20px;
         padding: 10px 10px 90px 10px !important;
+    }
+
+    .logo-wrapper img {
+        width: 120px;
     }
 }
 

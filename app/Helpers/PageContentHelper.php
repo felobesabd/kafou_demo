@@ -109,6 +109,7 @@ class PageContentHelper
     public static function getAllSections()
     {
         return \App\Models\Section::where('is_deleted', 0)
+            ->where('showing_user', 1)
             ->orderBy('order')
             ->get();
     }
