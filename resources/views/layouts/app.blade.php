@@ -16,15 +16,15 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    
+
     @yield('head')
 </head>
 <body>
     <div>
         @include('partials.header')
-        
+
         @yield('content')
-        
+
         @include('partials.footer')
     </div>
 

@@ -12,7 +12,7 @@
 
     <style>
         .sidebar {
-            min-height: 100vh;
+            height: 100%;
             background: #2c3e50;
             color: white;
         }
@@ -133,11 +133,11 @@
                                 All Content
                             </a>--}}
 
-                            <a class="nav-link {{ request()->routeIs('admin.sections.*') ? 'active' : '' }}"
+                            {{--<a class="nav-link {{ request()->routeIs('admin.sections.*') ? 'active' : '' }}"
                                href="{{ route('admin.sections.index') }}">
                                 <i class="fas fa-th-list me-2"></i>
                                 Sections
-                            </a>
+                            </a>--}}
                         </nav>
                     </div>
                 </div>

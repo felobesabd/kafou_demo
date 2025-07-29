@@ -17,13 +17,13 @@
             <div class="footer-column">
               <h3>Kafou Medical</h3>
               <ul class="footer-links">
-                <li><a href="#">Why Kafou Medical?</a></li>
+                <li><a href="{{ route('front.why_kafou') }}">Why Kafou Medical?</a></li>
                 <li><a href="#">Our Partners</a></li>
                 <li><a href="#">Our Clients</a></li>
                 <li><a href="#">Join Our Team</a></li>
                 <li><a href="#">Job Openings</a></li>
                 <li><a href="#">Direct Apply</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="{{ route('front.contact_us') }}">Contact Us</a></li>
               </ul>
             </div>
           </div>

@@ -32,7 +32,15 @@
                                 <div class="btn-group" role="group">
                                     <a href="{{ route('admin.contents.pages', $page->id) }}"
                                        class="btn btn-sm btn-outline-primary" title="Content">
-                                        <i class="fas fa-eye"></i>
+                                        {{--<i class="fas fa-eye"></i>--}}
+                                        All Keys
+                                    </a>
+                                </div>
+
+                                <div class="btn-group" role="group">
+                                    <a href="{{ route('admin.get.sections.by.page', $page->id) }}"
+                                       class="btn btn-sm btn-outline-primary" title="Content">
+                                        All Sections
                                     </a>
                                 </div>
                             </td>

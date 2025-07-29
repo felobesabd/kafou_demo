@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryPagesController;
+use App\Http\Controllers\Admin\CkeditorController;
+use App\Http\Controllers\Admin\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,24 +19,54 @@ use App\Http\Controllers\Admin\CategoryPagesController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('front.index');
 })->name('front.home');
 
 Route::get('/why-kafou', function () {
-    return view('why-kafou');
-});
+    return view('front.why-kafou');
+})->name('front.why_kafou');
 
 Route::get('/welcome-kafou', function () {
-    return view('welcome-kafou');
-});
+    return view('front.welcome-kafou');
+})->name('front.welcome_kafou');
 
 Route::get('/mission-vision', function () {
-    return view('mission-vision');
+    return view('front.mission-vision');
+})->name('front.mission_vision');
+
+Route::get('/divisions', function () {
+    return view('front.divisions');
 });
 
-Route::get('/test', function () {
-    return view('test');
+Route::name('division.')->group(function () {
+    Route::get('/anesthesia', function () {
+        return view('front.divisions.anesthesia');
+    })->name('anesthesia');
+
+    Route::get('/lab-solutions', function () {
+        return view('front.divisions.lab_solutions');
+    })->name('lab_solutions');
+
+    Route::get('/respiratory', function () {
+        return view('front.divisions.respiratory');
+    })->name('respiratory');
+
+    Route::get('/sleep-disorders', function () {
+        return view('front.divisions.sleep_disorders');
+    })->name('sleep_disorders');
+
+    Route::get('/nursing-icu', function () {
+        return view('front.divisions.nursing_icu');
+    })->name('nursing_icu');
 });
+
+Route::get('/ethics-compliance', function () {
+    return view('front.ethics_compliance');
+})->name('ethics_compliance');
+
+Route::get('/contact-us', function () {
+    return view('front.contact_us');
+})->name('front.contact_us');
 
 // Authentication routes
 Auth::routes();
@@ -44,13 +76,17 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     // Route::resource('users', UserController::class);
 
-    Route::resource('sections', \App\Http\Controllers\Admin\SectionController::class);
+    Route::resource('sections', SectionController::class);
+    Route::get('get-sections-by-page/{page_id}', [SectionController::class, 'getAllSectionsByPageId'])->name('get.sections.by.page');
 
     Route::get('all-pages', [CategoryPagesController::class, 'getAllCategoryPages'])->name('all.pages');
     Route::get('all-keys-page/{page_id}', [CategoryPagesController::class, 'getAllKeysForPage'])->name('contents.pages');
     Route::get('key-edit/{key_id}', [CategoryPagesController::class, 'editKey'])->name('edit.key');
     Route::put('key-update/{key_id}', [CategoryPagesController::class, 'updateKey'])->name('update.key');
+
     // Route::get('all-content', [CategoryPagesController::class, 'viewAllContent'])->name('all.content');
+
+    Route::post('/ckeditor/upload', [CkeditorController::class, 'uploadImage'])->name('ckeditor.upload');
 });
 
 Route::get('/home', function () {

@@ -1,0 +1,138 @@
+.anesthesia .media-content {
+    background-image: url("../../Uploads/Divisions/anesthesia_general_1.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.divisions-general .text-content {
+    justify-content: center;
+}
+
+/* Sample styles for ul and li */
+.anesthesia h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.anesthesia ul {
+    padding-left: 2rem;
+    list-style-type: disc;
+}
+
+.anesthesia ul li {
+    padding-left: 0.5rem;
+    position: relative;
+    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.anesthesia ul li::marker {
+    color: #2a8b8b;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .anesthesia .text-content {
+        height: 65%;
+        padding: 40px 25px 0;
+    }
+
+    .anesthesia .media-content {
+        height: 35%;
+    }
+
+    .anesthesia h2 {
+        font-size: 1.2rem;
+    }
+
+    .anesthesia ul {
+        padding-left: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .anesthesia ul li {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+
+    .anesthesia .media-content img,
+    .anesthesia img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 1rem 0 0 0;
+        border-radius: 0.7rem;
+        max-width: 100%;
+    }
+}
+
+.pain-therapy .media-content {
+    background-image: url("../../Uploads/Divisions/4dce5090-bcf9-47ed-bb8d-80e6edb61bcd.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .divisions-general .section-title {
+        margin-bottom: 10px;
+    }
+}
+
+.regional .media-content {
+    background-image: url("../../Uploads/Divisions/anesthesia_regional.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.equipment .media-content {
+    background-image: url("../../Uploads/Divisions/lab_solutions_equipment.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.consumables .media-content {
+    background-image: url("../../Uploads/Divisions/lab_solutions_consumables.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.genetics .media-content {
+    background-image: url("../../Uploads/Divisions/lab_solutions_genetics.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.turnkey .media-content {
+    background-image: url("../../Uploads/Divisions/lab_solutions_turnkey.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.respiratory .media-content {
+    background-image: url("../../Uploads/Divisions/respiratory.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.sleep-disorders .media-content {
+    background-image: url("../../Uploads/Divisions/sleep_disorders.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.nursing-icu .media-content {
+    background-image: url("../../Uploads/Divisions/nursing_icu.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

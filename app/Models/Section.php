@@ -18,5 +18,7 @@ class Section extends Model
         'button',
         'order',
         'is_deleted',
+        'is_image',
+        'is_video',
     ];
 }

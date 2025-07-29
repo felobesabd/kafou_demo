@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CategoryPage;
 use App\Models\PageContent;
+use App\Models\Section;
 use App\Models\User;
 use App\Helpers\PageContentHelper;
 use Illuminate\Http\Request;

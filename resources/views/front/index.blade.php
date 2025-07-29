@@ -108,7 +108,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.anesthesia') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -142,7 +142,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.lab_solutions') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -159,7 +159,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.respiratory') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -176,7 +176,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.sleep_disorders') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -193,7 +193,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.nursing_icu') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -281,7 +281,7 @@
                         <p class="section-description">
                             {!! strip_tags($section->text, '<b><i><span><strong><em><br><hr>') !!}
                         </p>
-                        <a href="#" class="cta-button text-dark">
+                        <a href="{{ route('ethics_compliance') }}" class="cta-button text-dark">
                             {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                         </a>
                     </div>
@@ -297,7 +297,7 @@
                 <div class="scrollify main-section red-split-section main-section-green">
                     <!-- Mobile layout -->
                     <div class="logo-mobile-center d-md-none text-center pt-4">
-                        <img class="img-fluid" src="assets/images/career_3.png" alt="Careers Image" style="max-width: 90px;">
+                        <img class="img-fluid" src="assets/images/career_6.png" alt="Careers Image" style="max-width: 90px;">
                     </div>
 
                     <div class="mobile-bottom-content careers-buttons d-md-none">
@@ -313,12 +313,11 @@
                             <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
                             <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
                         </div>
-
                     </div>
 
                     <div class="media-content-red d-none d-md-block">
                         <div class="logo-wrapper">
-                            <img class="img-fluid" src="assets/images/career_3.png" alt="Careers Image" />
+                            <img class="img-fluid" src="assets/images/career_6.png" alt="Careers Image" />
                         </div>
                     </div>
                 </div>

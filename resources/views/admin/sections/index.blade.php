@@ -7,7 +7,10 @@
     <div class="card-header">
         <div class="row align-items-center">
             <div class="col-md-6">
-                <h5 class="mb-0">All Sections ({{ $sections->total() ?? 0 }})</h5>
+                <h5 class="mb-0">
+                    {{ $sections->count() > 0 ? ucwords($sections[0]->page_name) : ''}}
+                    - All Sections ({{ $sections->total() ?? 0 }})
+                </h5>
             </div>
             <div class="col-md-6 text-end">
                 {{--<a href="{{ route('admin.sections.create') }}" class="btn btn-primary">
@@ -72,16 +75,41 @@
                 <table class="table table-hover">
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>#</th>
+                        <th>Page Name</th>
+                        <th>Image</th>
+                        <th>Video</th>
                         <th>Section</th>
                         <th>Order</th>
                         <th class="text-end">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($sections as $section)
+                    @foreach($sections as $index => $section)
                         <tr>
-                            <td>{{ $section->id }}</td>
+                            <td>{{ $index + 1 }}</td>
+                            <td>
+                                <div class="fw-bold">
+                                    {{ ucwords($section->page_name) }}
+                                </div>
+                            </td>
+                            <td>
+                                @if($section->is_image)
+                                    <img src="{{ asset($section->is_image) }}" width="150">
+                                @else
+                                    <span class="text-muted">No image</span>
+                                @endif
+                            </td>
+                            <td>
+                                @if($section->is_video)
+                                    <video width="150" controls>
+                                        <source src="{{ asset($section->is_video) }}" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                @else
+                                    <span class="text-muted">No video</span>
+                                @endif
+                            </td>
                             <td>
                                 <div class="fw-bold">
                                     {{ ucwords(str_replace('_', ' ', $section->section_key)) }}
