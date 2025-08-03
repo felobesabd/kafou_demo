@@ -125,7 +125,7 @@
                     <h3 class="section-title highlight-underline">
                         {!! strip_tags($section->title, '<b><i><span><strong><em><br><hr>') !!}
                     </h3>
-                    <a href="{{ url('/') }}" class="cta-button">
+                    <a href="{{ route('division.surgery') }}" class="cta-button">
                         {!! strip_tags($section->button, '<b><i><span><strong><em><br><hr>') !!}
                     </a>
                 </div>
@@ -237,7 +237,7 @@
                         <div class="row align-items-center">
                             <div class="carousel-text">
                                 <h2 class="carousel-title">{!! strip_tags($keys['our_partners_title'] ?? 'Our Partners', '<b><i><span><strong><em>') !!}</h2>
-                                <a href="#" class="cta-button">
+                                <a href="{{ route('front.our_partners') }}" class="cta-button">
                                     {!! strip_tags($keys['our_partners_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
                                 </a>
                             </div>

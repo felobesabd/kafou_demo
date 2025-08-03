@@ -43,6 +43,10 @@ Route::name('division.')->group(function () {
         return view('front.divisions.anesthesia');
     })->name('anesthesia');
 
+    Route::get('/surgery', function () {
+        return view('front.divisions.surgery');
+    })->name('surgery');
+
     Route::get('/lab-solutions', function () {
         return view('front.divisions.lab_solutions');
     })->name('lab_solutions');
@@ -67,6 +71,10 @@ Route::get('/ethics-compliance', function () {
 Route::get('/contact-us', function () {
     return view('front.contact_us');
 })->name('front.contact_us');
+
+Route::get('/our-partners', function () {
+    return view('front.our_partners');
+})->name('front.our_partners');
 
 // Authentication routes
 Auth::routes();

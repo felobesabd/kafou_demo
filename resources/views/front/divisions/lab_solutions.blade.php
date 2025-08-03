@@ -9,15 +9,50 @@
 @endsection
 
 @section('content')
+    {{-- IVF Lab Equipment and Disposables --}}
     <div class="scrollify main-section split-section equipment divisions-general">
         <div class="text-content">
             <h2 class="section-title">
-                LAB Solutions Equipment
+                IVF Lab Equipment and Disposables
             </h2>
 
             <p class="section-description">
                 Kafou Medical is a top player in the Fertility and IVF market in the Kingdom of Saudi Arabia, providing a wide array of IVF products and solutions.
                 The range of our services covers everything from IVF project planning and design to providing equipment and training for turnkey projects.
+            </p>
+        </div>
+
+        <div class="media-content"></div>
+    </div>
+
+    {{-- IVF Turnkey Projects --}}
+    <div class="scrollify main-section split-section turnkey divisions-general">
+        <div class="text-content">
+            <h2 class="section-title">
+                IVF Turnkey Projects
+            </h2>
+
+            <p class="section-description">
+                Kafou Medical team has a remarkable experience in setting up systems in the facilities of
+                prestigious hospitals and clinics of both the governmantal and private sector taking up
+                the complete setting up of the department as a turnkey project.
+            </p>
+        </div>
+
+        <div class="media-content"></div>
+    </div>
+
+    {{--  After Sales Services  --}}
+    <div class="scrollify main-section split-section consumables divisions-general">
+        <div class="text-content">
+            <h2 class="section-title">
+                After Sales Services
+            </h2>
+
+            <p class="section-description">
+                Kafou Medical has a team of trained Engineers to provide quality installation, maintenance,
+                service and training locally in the Kingdom of Saudi Arabia. We address all customer requirements
+                with utmost care and resolve them as quickly as possible.
             </p>
         </div>
 
@@ -49,38 +84,6 @@
             <p class="section-description">
                 Kafou Medical is a major player in the Genetics Laboratories market
                 in the Kingdom of Saudi Arabia providing a wide range of top brands Labs products and solutions.
-            </p>
-        </div>
-
-        <div class="media-content"></div>
-    </div>
-
-    <div class="scrollify main-section split-section turnkey divisions-general">
-        <div class="text-content">
-            <h2 class="section-title">
-                Turnkey Project
-            </h2>
-
-            <p class="section-description">
-                Kafou Medical team has a remarkable experience in setting up systems in the facilities of
-                prestigious hospitals and clinics of both the governmantal and private sector taking up
-                the complete setting up of the department as a turnkey project.
-            </p>
-        </div>
-
-        <div class="media-content"></div>
-    </div>
-
-    <div class="scrollify main-section split-section consumables divisions-general">
-        <div class="text-content">
-            <h2 class="section-title">
-                After Sales Services
-            </h2>
-
-            <p class="section-description">
-                Kafou Medical has a team of trained Engineers to provide quality installation, maintenance,
-                service and training locally in the Kingdom of Saudi Arabia. We address all customer requirements
-                with utmost care and resolve them as quickly as possible.
             </p>
         </div>
 
