@@ -78,6 +78,73 @@ class WhyKafouPageSectionSeeder extends Seeder
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
             ],
+            [
+                'section_key'       => 'why_kafou_section_6',
+                'page_name'         => 'why kafou',
+                'page_id'           => $page->id,
+                'title'             => 'SFDA REGISTRATION',
+                'text'              => "According to the Saudi FDA regulations, overseas medical manufacturers must appoint a local Authorized Representative. The Authorized Representative will act as a communication channel between the manufacturer and the Saudi FDA.
+                                        Kafou Medical deals directly with Regulatory Consultants to overseas medical manufacturers to grant the Saudi FDA approvals for their products.
+                                        Medical & Non-Medical Devices/IVDs licenses include but not limited to:
+                                        Medical Device National Registry “MDNR”.
+                                        Medical Device Establishment License “MDEL”.
+                                        Medical Device Marketing Authorization “MDMA”.
+                                        Medical Device Importing License “MDIL”.
+                                        National Center for Medical Devices Reporting “NCMDR”.
+                                        Product Classification System “PCS”.",
+                'order'             => 6,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
+            [
+                'section_key'       => 'why_kafou_section_7',
+                'page_name'         => 'why kafou',
+                'page_id'           => $page->id,
+                'title'             => 'REDUCE LEAD TIME',
+                'text'              => "Delivery time is a deal breaker in GCC, we believe Kafou Medical can build smart inventory to reduce delivery time to the minimum.",
+                'order'             => 7,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
+            [
+                'section_key'       => 'why_kafou_section_8',
+                'page_name'         => 'why kafou',
+                'page_id'           => $page->id,
+                'title'             => 'RELIABILITY',
+                'text'              => "With our multinational business partners of different sizes, we know how important it is to have excellent communication capabilities and the flexibility to adapt rapidly to our partners requirements.
+                                        Understanding what business strategy and vision our partner has is a crucial element for being successful in the briefest time possible.",
+                'order'             => 8,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
+            [
+                'section_key'       => 'why_kafou_section_9',
+                'page_name'         => 'why kafou',
+                'page_id'           => $page->id,
+                'title'             => 'INTELLECTUAL PROPERTY',
+                'text'              => "Working hard in R&D to finally innovate a product isn’t a simple operation. It requires perseveration and an uncountable amount of time.
+                                        For this reason, we perfectly understand how important Intellectual Property, Patents and Brands are for you.
+                                        If we are looking for a partner who knows how to deal with NDAs and respect the principal’s rights, then you will not be disappointed with us.",
+                'order'             => 9,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
+            [
+                'section_key'       => 'why_kafou_section_10',
+                'page_name'         => 'why kafou',
+                'page_id'           => $page->id,
+                'title'             => 'LAWS & REGULATIONS',
+                'text'              => "Entering a new country comes with a burden which is the understanding of a new range of Rules and Regulations which you are not used to.
+                                        Kafou Group has established and operated seven different type of businesses in Saudi Arabia ranging from Food Supply to Medical Equipment and have grown a considerable experience in these matters.",
+                'order'             => 10,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
         ];
 
         foreach ($sections as $item) {

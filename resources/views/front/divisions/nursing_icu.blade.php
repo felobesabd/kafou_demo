@@ -9,7 +9,50 @@
 @endsection
 
 @section('content')
-    <div class="scrollify main-section split-section nursing-icu divisions-general">
+    @php
+        $sections = \App\Helpers\PageContentHelper::getAllSections();
+    @endphp
+
+    @foreach($sections as $section)
+        @switch($section->section_key)
+            @case('nursing_icu_section_1')
+                {{-- Welcome Video Section --}}
+                <div class="scrollify main-section fullscreen-section">
+                    <div class="overlay"></div>
+                    <video autoplay muted loop playsinline>
+                        <source src="{{ $section->is_video ? asset($section->is_video) : asset('assets/videos/nursing&ICU.mp4') }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h2>{!! $section->title !!}</h2>
+                    <div>
+                        {!! $section->text !!}
+                    </div>
+                </div>
+                @break
+
+            @case('nursing_icu_section_2')
+                {{-- Nursing & ICU Main Section --}}
+                <div class="scrollify main-section split-section nursing-icu divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title">
+                            {{ $section->title ?? "Nursing & ICU" }}
+                        </h2>
+                        <div class="section-description">
+                            {!! $section->text ?? '<p>Intensive care units (ICUs) are specially equipped hospital units that provide intensive care to critically ill patients</p>' !!}
+                        </div>
+                    </div>
+                    <div class="media-content"
+                         style="background-image: url('{{ asset($section->is_image ?? 'Uploads/Divisions/nursing_icu.jpg') }}');
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         background-position: center;">
+                    </div>
+                </div>
+                @break
+        @endswitch
+    @endforeach
+
+    {{--<div class="scrollify main-section split-section nursing-icu divisions-general">
         <div class="text-content">
             <h2 class="section-title">
                 Nursing & ICU
@@ -22,5 +65,5 @@
         </div>
 
         <div class="media-content"></div>
-    </div>
+    </div>--}}
 @endsection

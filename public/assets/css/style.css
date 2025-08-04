@@ -81,7 +81,7 @@
     }
 }
 
-.regional .media-content {
+/*.regional .media-content {
     background-image: url("../../Uploads/Divisions/anesthesia_regional.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
@@ -114,28 +114,28 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+}*/
 
-.respiratory .media-content {
+/*.respiratory .media-content {
     background-image: url("../../Uploads/Divisions/respiratory.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+}*/
 
-.sleep-disorders .media-content {
+/*.sleep-disorders .media-content {
     background-image: url("../../Uploads/Divisions/sleep_disorders.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+}*/
 
-.nursing-icu .media-content {
+/*.nursing-icu .media-content {
     background-image: url("../../Uploads/Divisions/nursing_icu.jpg") !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-}
+}*/
 /************************************************** Surgery *****************************************/
 .surgery h2 {
     font-size: 32px;
@@ -210,4 +210,35 @@
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     animation: bounce 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .sfda .text-content {
+        height: 75%;
+        padding: 40px 25px 0;
+    }
+
+    .sfda .media-content {
+        height: 25%;
+    }
+
+    .sfda h2 {
+        font-size: 1.2rem;
+    }
+
+    .sfda ul {
+        padding-left: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .sfda ul li {
+        font-size: 15px;
+        line-height: 1.2;
+    }
+}
+
+@media (min-width: 768px) {
+    .sfda .section-title {
+        font-size: 2rem;
+    }
 }

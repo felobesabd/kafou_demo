@@ -9,6 +9,12 @@
 @endsection
 
 @section('content')
+    <style>
+        p {
+            margin: 0;
+        }
+    </style>
+
     @php
         $sections = \App\Helpers\PageContentHelper::getAllSections();
     @endphp
@@ -129,6 +135,119 @@
                             or enhancing the local content which might require a consistent investment in time and in
                             infrastructure. Kafou Medical can provide you the necessary requirements you need
                             in order to achieve your goals faster." !!}
+                        </p>
+                    </div>
+
+                    <div class="media-content"
+                         style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                    </div>
+                </div>
+                @break
+
+            @case('why_kafou_section_6')
+                <div class="scrollify main-section split-section sfda divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title" style="margin-bottom:5px;">
+                            {{ $section->title ?? "SFDA REGISTRATION" }}
+                        </h2>
+
+                        <p class="section-description">
+                            {!! $section->text ?? "According to the Saudi FDA regulations, overseas medical
+                            manufacturers must appoint a local Authorized Representative. The Authorized
+                            Representative will act as a communication channel between the manufacturer and
+                            the Saudi FDA." !!}
+                        </p>
+                    </div>
+
+                    <div class="media-content"
+                         style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                    </div>
+                </div>
+                @break
+
+            @case('why_kafou_section_7')
+                <div class="scrollify main-section split-section divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title">
+                            {{ $section->title ?? "REDUCE LEAD TIME" }}
+                        </h2>
+
+                        <p class="section-description">
+                            {!! $section->text ?? "Delivery time is a deal breaker in GCC, we believe Kafou Medical can build smart inventory to reduce delivery time to the minimum." !!}
+                        </p>
+                    </div>
+
+                    <div class="media-content"
+                         style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                    </div>
+                </div>
+                @break
+
+            @case('why_kafou_section_8')
+                <div class="scrollify main-section split-section divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title">
+                            {{ $section->title ?? "RELIABILITY" }}
+                        </h2>
+
+                        <p class="section-description">
+                            {!! $section->text ?? "With our multinational business partners of different sizes, we know how important it is to have excellent communication capabilities and the flexibility to adapt rapidly to our partners requirements." !!}
+                        </p>
+                    </div>
+
+                    <div class="media-content"
+                         style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                    </div>
+                </div>
+                @break
+
+            @case('why_kafou_section_9')
+                <div class="scrollify main-section split-section divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title">
+                            {{ $section->title ?? "INTELLECTUAL PROPERTY" }}
+                        </h2>
+
+                        <p class="section-description">
+                            {!! $section->text ?? "Working hard in R&D to finally innovate a product isn’t a simple operation. It requires perseveration and an uncountable amount of time." !!}
+                        </p>
+                    </div>
+
+                    <div class="media-content"
+                         style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+                    </div>
+                </div>
+                @break
+
+            @case('why_kafou_section_10')
+                <div class="scrollify main-section split-section divisions-general">
+                    <div class="text-content">
+                        <h2 class="section-title">
+                            {{ $section->title ?? "LAWS & REGULATIONS" }}
+                        </h2>
+
+                        <p class="section-description">
+                            {!! $section->text ?? "Entering a new country comes with a burden which is the understanding of a new range of Rules and Regulations which you are not used to." !!}
                         </p>
                     </div>
 
