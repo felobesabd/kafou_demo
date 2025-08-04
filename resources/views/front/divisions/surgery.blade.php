@@ -21,8 +21,8 @@
 
     @foreach($sections as $section)
         @switch($section->section_key)
-            @case('surgery_section_1')
-                {{-- Welcome Section --}}
+            {{--@case('surgery_section_1')
+                --}}{{-- Welcome Section --}}{{--
                 <div class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
@@ -34,9 +34,9 @@
                         {!! $section->text !!}
                     </div>
                 </div>
-                @break
+                @break--}}
 
-            @case('surgery_section_2')
+            @case('surgery_section_1')
                 {{-- Bariatric --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -56,7 +56,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_3')
+            @case('surgery_section_2')
                 {{-- Cardiovascular & Thoracic --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -76,7 +76,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_4')
+            @case('surgery_section_3')
                 {{-- ENT --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -96,7 +96,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_5')
+            @case('surgery_section_4')
                 {{-- Gastric Sleeve --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -116,7 +116,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_6')
+            @case('surgery_section_5')
                 {{-- General surgical instruments --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -133,7 +133,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_7')
+            @case('surgery_section_6')
                 {{-- Laparoscopic Surgical Instruments --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -153,7 +153,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_8')
+            @case('surgery_section_7')
                 {{-- Neuro --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -173,7 +173,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_9')
+            @case('surgery_section_8')
                 {{-- OB/GYNE - Gynaecology --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -193,7 +193,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_10')
+            @case('surgery_section_9')
                 {{-- Ophthalmic --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -213,7 +213,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_11')
+            @case('surgery_section_10')
                 {{-- Orthopaedic --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -233,7 +233,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_12')
+            @case('surgery_section_11')
                 {{-- Plastic Surgery --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -253,7 +253,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_13')
+            @case('surgery_section_12')
                 {{-- Rigid Telescopes --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -273,7 +273,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_14')
+            @case('surgery_section_13')
                 {{-- Urology --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -293,7 +293,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_15')
+            @case('surgery_section_14')
                 {{-- Surgical Consumable --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -313,7 +313,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_16')
+            @case('surgery_section_15')
                 {{-- Operating Rooms Consumables --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -333,7 +333,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_17')
+            @case('surgery_section_16')
                 {{-- Nursing Consumables --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -353,7 +353,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_18')
+            @case('surgery_section_17')
                 {{-- CSSD Consumables --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -373,7 +373,7 @@
                 </div>
                 @break
 
-            @case('surgery_section_19')
+            @case('surgery_section_18')
                 {{-- CSSD Equipment --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">

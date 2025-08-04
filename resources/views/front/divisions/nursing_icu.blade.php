@@ -15,8 +15,8 @@
 
     @foreach($sections as $section)
         @switch($section->section_key)
-            @case('nursing_icu_section_1')
-                {{-- Welcome Video Section --}}
+            {{--@case('nursing_icu_section_1')
+                --}}{{-- Welcome Video Section --}}{{--
                 <div class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
@@ -28,9 +28,9 @@
                         {!! $section->text !!}
                     </div>
                 </div>
-                @break
+                @break--}}
 
-            @case('nursing_icu_section_2')
+            @case('nursing_icu_section_1')
                 {{-- Nursing & ICU Main Section --}}
                 <div class="scrollify main-section split-section nursing-icu divisions-general">
                     <div class="text-content">

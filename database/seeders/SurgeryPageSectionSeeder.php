@@ -19,8 +19,7 @@ class SurgeryPageSectionSeeder extends Seeder
         ]);
 
         $sections = [
-            // welcome
-            [
+            /*[
                 'section_key'       => 'surgery_section_1',
                 'page_name'         => 'Divisions - Surgery',
                 'page_id'           => $page->id,
@@ -30,28 +29,25 @@ class SurgeryPageSectionSeeder extends Seeder
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
-            ],
-            // 1. Bariatric
+            ],*/
             [
-                'section_key'       => 'surgery_section_2',
+                'section_key'       => 'surgery_section_1',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Bariatric',
                 'text'              => '<ul><li>Dissectors, clamps, graspers, & hooks.</li><li>Retractor arms.</li><li>Nathanson liver retractors.</li><li>Laparoscopic trocar incision closure devices.</li></ul>',
-                'order'             => 2,
+                'order'             => 1,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
             ],
-
-            // 2. Cardiovascular & Thoracic
             [
-                'section_key'       => 'surgery_section_3',
+                'section_key'       => 'surgery_section_2',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Cardiovascular & Thoracic',
                 'text'              => '<ul><li>Occlusion Clips and clamps.</li><li>vascular, bulldog, aorta, and anastomosis.</li></ul>',
-                'order'             => 3,
+                'order'             => 2,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -59,12 +55,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 3. ENT
             [
-                'section_key'       => 'surgery_section_4',
+                'section_key'       => 'surgery_section_3',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'ENT',
                 'text'              => '<ul><li>Endoscopes reusable instruments.</li><li>Otology reusable instruments.</li><li>Rhinology reusable instruments.</li><li>Tonsillectomy reusable instruments.</li><li>Tracheotomy reusable instruments.</li><li>Bronchoscopy reusable instruments.</li><li>FESS reusable instruments.</li></ul>',
-                'order'             => 4,
+                'order'             => 3,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -72,12 +68,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 4. Gastric Sleeve
             [
-                'section_key'       => 'surgery_section_5',
+                'section_key'       => 'surgery_section_4',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Gastric Sleeve',
                 'text'              => '<ul><li>Disposable Laparoscopic Trocars.</li><li>Hand disposable laparoscopic instruments.</li><li>Surgical Staplers.</li></ul>',
-                'order'             => 5,
+                'order'             => 4,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -85,12 +81,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 5. General surgical instruments
             [
-                'section_key'       => 'surgery_section_6',
+                'section_key'       => 'surgery_section_5',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'General surgical instruments',
                 'text'              => '<ul><li>Scalpels.</li><li>Knives.</li><li>Scissors (TC / SC / CC / Micro Scissors).</li><li>Forceps (TC / mono- & bipolar / Micro Forceps / Haemostatic Forceps) Vessel Clips; Approximators.</li><li>Clamps (Towel Clamps / Tubing Clamps).</li><li>Needle Holders (TC / Micro Needle Holders).</li></ul>',
-                'order'             => 6,
+                'order'             => 5,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -98,12 +94,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 6. Laparoscopic Surgical Instruments
             [
-                'section_key'       => 'surgery_section_7',
+                'section_key'       => 'surgery_section_6',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Laparoscopic Surgical Instruments',
                 'text'              => '<ul><li>Cannulas and Trocars.</li><li>Trocar Incision Closure Devices.</li><li>Electrodes and Electrosurgical.</li><li>Laparoscopic Bipolar Scissors and Graspers.</li><li>Hooks and Probes.</li><li>Knot Pushers.</li><li>Needles and Needle Holders</li></ul>',
-                'order'             => 7,
+                'order'             => 6,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -111,12 +107,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 7. Neuro
             [
-                'section_key'       => 'surgery_section_8',
+                'section_key'       => 'surgery_section_7',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Neuro',
                 'text'              => '<ul><li>Brain Retractors.</li><li>Laminectomy Distractors.</li><li>Cranial Rongeurs.</li><li>Scalp Clips and Applying Forceps.</li><li>Galea Hooks.</li><li>Dura Dissectors.</li></ul>',
-                'order'             => 8,
+                'order'             => 7,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -124,12 +120,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 8. OB/GYNE - Gynaecology
             [
-                'section_key'       => 'surgery_section_9',
+                'section_key'       => 'surgery_section_8',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'OB/GYNE - Gynaecology',
                 'text'              => '<ul><li>Forceps & Clamps - For uterine and caesarean, hysterectomy and other obstetrics and gynae surgery.</li><li>Cervical Dilators - For stretching the cervical wall and dilating the cervical muscles.</li><li>Diagnostic Vaginal Speculums.</li></ul>',
-                'order'             => 9,
+                'order'             => 8,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -137,12 +133,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 9. Ophthalmic
             [
-                'section_key'       => 'surgery_section_10',
+                'section_key'       => 'surgery_section_9',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Ophthalmic',
                 'text'              => '<ul><li>Micro needle holder.</li><li>Phaco choppers.</li><li>Needle holders.</li><li>Glaucoma set.</li><li>Enucleation and cataracts.</li></ul>',
-                'order'             => 10,
+                'order'             => 9,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -150,12 +146,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 10. Orthopaedic
             [
-                'section_key'       => 'surgery_section_11',
+                'section_key'       => 'surgery_section_10',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Orthopaedic',
                 'text'              => '<ul><li>Implants and Instruments.</li></ul>',
-                'order'             => 11,
+                'order'             => 10,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -163,12 +159,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 11. Plastic Surgery
             [
-                'section_key'       => 'surgery_section_12',
+                'section_key'       => 'surgery_section_11',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Plastic Surgery',
                 'text'              => '<ul><li>Awls, chisels, mallets.</li><li>Gouges, pliers.</li><li>Osteotomes, rasps.</li><li>Rongeurs, and cutting wire.</li></ul>',
-                'order'             => 12,
+                'order'             => 11,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -176,12 +172,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 12. Rigid Telescopes
             [
-                'section_key'       => 'surgery_section_13',
+                'section_key'       => 'surgery_section_12',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Rigid Telescopes',
                 'text'              => '<ul><li>Laparoscopic.</li><li>Urology.</li><li>Sinuscopy.</li><li>Gynaecology.</li><li>Arthroscopy.</li><li>Bronchoscopy.</li></ul>',
-                'order'             => 13,
+                'order'             => 12,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -189,12 +185,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 13. Urology
             [
-                'section_key'       => 'surgery_section_14',
+                'section_key'       => 'surgery_section_13',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Urology',
                 'text'              => '<ul><li>Cystoscopy instruments set.</li><li>Resectoscope instruments set.</li><li>Urethrotomy instruments set.</li><li>Nephoscopy instruments set.</li><li>Uretero - Reno scope instruments set.</li></ul>',
-                'order'             => 14,
+                'order'             => 13,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -202,12 +198,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 14. Surgical Consumable
             [
-                'section_key'       => 'surgery_section_15',
+                'section_key'       => 'surgery_section_14',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Surgical Consumable',
                 'text'              => '<p>Surgical consumables are items that are used during surgery or in the postoperative period. These items can include surgical gloves, gowns, masks, and other medical supplies. There are a variety of reasons why surgical consumables may be necessary. In some cases, they may help to prevent a transfer of infectious.</p>',
-                'order'             => 15,
+                'order'             => 14,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -215,12 +211,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 15. Operating Rooms Consumables
             [
-                'section_key'       => 'surgery_section_16',
+                'section_key'       => 'surgery_section_15',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Operating Rooms Consumables',
                 'text'              => '<p>Our range includes Surgical Gowns, Isolation gown, Surgical mask, Cesarean Section Pack, General Surgery Pack, Ophthalmic Drape Pack, Cardiovascular Surgical Pack, Orthopedic Pack, ENT Surgical Pack and Urology Surgical Pack.</p>',
-                'order'             => 16,
+                'order'             => 15,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -228,12 +224,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 16. Nursing Consumables
             [
-                'section_key'       => 'surgery_section_17',
+                'section_key'       => 'surgery_section_16',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'Nursing Consumables',
                 'text'              => '<p>Our range includes essentials from PPE such as face masks, gloves and wound management, surgical gowns, surgical drapes alongside patient care basics.</p>',
-                'order'             => 17,
+                'order'             => 16,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -241,12 +237,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 17. CSSD Consumables
             [
-                'section_key'       => 'surgery_section_18',
+                'section_key'       => 'surgery_section_17',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'CSSD Consumables',
                 'text'              => '<p>Our range includes Sterilization Wraps, Pouches, Sterilization Container Accessories, Container filters, Transportation Boxes. rigid plastic boxes manufactured and tested to meet requirements for packages used to contain pathogen infected medical instruments and clinical waste being transported on public roads.</p>',
-                'order'             => 18,
+                'order'             => 17,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
@@ -254,12 +250,12 @@ class SurgeryPageSectionSeeder extends Seeder
 
             // 18. CSSD Equipment
             [
-                'section_key'       => 'surgery_section_19',
+                'section_key'       => 'surgery_section_18',
                 'page_name'         => 'surgery',
                 'page_id'           => $page->id,
                 'title'             => 'CSSD Equipment',
                 'text'              => '<p>Sterile Containers – for safe storage and cleaning of all types for the reusable Surgical Instruments and the telescope as well. During surgery, precision and sterility are paramount. Designed to maintain a disinfected environment containers help medical professionals organize surgical instruments and protect them from contamination or damage.</p>',
-                'order'             => 19,
+                'order'             => 18,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,

@@ -19,7 +19,7 @@ class NursingIcuPageSectionSeeder extends Seeder
         ]);
 
         $sections = [
-            [
+            /*[
                 'section_key'       => 'nursing_icu_section_1',
                 'page_name'         => 'nursing_icu',
                 'page_id'           => $page->id,
@@ -29,14 +29,14 @@ class NursingIcuPageSectionSeeder extends Seeder
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
-            ],
+            ],*/
             [
-                'section_key'       => 'nursing_icu_section_2',
+                'section_key'       => 'nursing_icu_section_1',
                 'page_name'         => 'nursing_icu',
                 'page_id'           => $page->id,
                 'title'             => 'Nursing & ICU',
                 'text'              => '<p>Intensive care units (ICUs) are specially equipped hospital units that provide intensive care to critically ill patients</p>',
-                'order'             => 2,
+                'order'             => 1,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,

@@ -19,7 +19,7 @@ class RespiratoryPageSectionSeeder extends Seeder
         ]);
 
         $sections = [
-            [
+            /*[
                 'section_key'       => 'respiratory_section_1',
                 'page_name'         => 'respiratory',
                 'page_id'           => $page->id,
@@ -29,14 +29,14 @@ class RespiratoryPageSectionSeeder extends Seeder
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
-            ],
+            ],*/
             [
-                'section_key'       => 'respiratory_section_2',
+                'section_key'       => 'respiratory_section_1',
                 'page_name'         => 'respiratory',
                 'page_id'           => $page->id,
                 'title'             => 'Respiratory',
                 'text'              => '<p>Respiratory therapy is a healthcare field specializing in the diagnosis, treatment, and management of conditions affecting the lungs and breathing. Respiratory therapists (RTs) work collaboratively with doctors and other healthcare professionals to help patients of all ages, from premature infants to elderly individuals with chronic lung diseases.</p>',
-                'order'             => 2,
+                'order'             => 1,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,

@@ -19,7 +19,7 @@ class SleepDisordersPageSectionSeeder extends Seeder
         ]);
 
         $sections = [
-            [
+            /*[
                 'section_key'       => 'sleep_disorders_section_1',
                 'page_name'         => 'sleep_disorders',
                 'page_id'           => $page->id,
@@ -29,14 +29,14 @@ class SleepDisordersPageSectionSeeder extends Seeder
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
-            ],
+            ],*/
             [
-                'section_key'       => 'sleep_disorders_section_2',
+                'section_key'       => 'sleep_disorders_section_1',
                 'page_name'         => 'sleep_disorders',
                 'page_id'           => $page->id,
                 'title'             => 'Sleep Disorders',
                 'text'              => '<p>Sleep disorders are conditions that disrupt your normal sleep patterns in a way that interferes with your daytime functioning. There are over 80 different types of sleep disorders.</p>',
-                'order'             => 2,
+                'order'             => 1,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,

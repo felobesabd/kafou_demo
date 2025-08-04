@@ -21,8 +21,8 @@
 
     @foreach($sections as $section)
         @switch($section->section_key)
-            @case('anesthesia_section_1')
-                {{--Welcome Section --}}
+            {{--@case('anesthesia_section_1')
+                --}}{{--Welcome Section --}}{{--
                 <div class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
@@ -34,9 +34,9 @@
                         {!! $section->text !!}
                     </h3>
                 </div>
-                @break
+                @break--}}
 
-            @case('anesthesia_section_2')
+            @case('anesthesia_section_1')
                 {{--Why Kafou Section --}}
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
@@ -59,7 +59,7 @@
                 </div>
                 @break
 
-            @case('anesthesia_section_3')
+            @case('anesthesia_section_2')
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
                         <h2 class="section-title">
@@ -83,7 +83,7 @@
                 </div>
                 @break
 
-            @case('anesthesia_section_4')
+            @case('anesthesia_section_3')
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
                         <h2 class="section-title">

@@ -19,8 +19,7 @@ class IVFPageSectionSeeder extends Seeder
         ]);
 
         $sections = [
-            // 1. Welcome Video Section
-            [
+            /*[
                 'section_key'       => 'lab_solutions_section_1',
                 'page_name'         => 'lab solutions',
                 'page_id'           => $page->id,
@@ -30,68 +29,58 @@ class IVFPageSectionSeeder extends Seeder
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
-            ],
-
-            // 2. IVF Lab Equipment and Disposables
+            ],*/
             [
-                'section_key'       => 'lab_solutions_section_2',
+                'section_key'       => 'lab_solutions_section_1',
                 'page_name'         => 'lab solutions',
                 'page_id'           => $page->id,
                 'title'             => 'IVF Lab Equipment and Disposables',
                 'text'              => 'Kafou Medical is a top player in the Fertility and IVF market in the Kingdom of Saudi Arabia, providing a wide array of IVF products and solutions. The range of our services covers everything from IVF project planning and design to providing equipment and training for turnkey projects.',
+                'order'             => 1,
+                'is_deleted'        => 0,
+                'showing_user'      => 1,
+                'showing_admin'     => 1,
+            ],
+            [
+                'section_key'       => 'lab_solutions_section_2',
+                'page_name'         => 'lab solutions',
+                'page_id'           => $page->id,
+                'title'             => 'IVF Turnkey Projects',
+                'text'              => 'Kafou Medical team has a remarkable experience in setting up systems in the facilities of prestigious hospitals and clinics of both the governmental and private sector taking up the complete setting up of the department as a turnkey project.',
                 'order'             => 2,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
             ],
-
-            // 3. IVF Turnkey Projects
             [
                 'section_key'       => 'lab_solutions_section_3',
                 'page_name'         => 'lab solutions',
                 'page_id'           => $page->id,
-                'title'             => 'IVF Turnkey Projects',
-                'text'              => 'Kafou Medical team has a remarkable experience in setting up systems in the facilities of prestigious hospitals and clinics of both the governmental and private sector taking up the complete setting up of the department as a turnkey project.',
+                'title'             => 'After Sales Services',
+                'text'              => 'Kafou Medical has a team of trained Engineers to provide quality installation, maintenance, service and training locally in the Kingdom of Saudi Arabia. We address all customer requirements with utmost care and resolve them as quickly as possible.',
                 'order'             => 3,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
             ],
-
-            // 4. After Sales Services
             [
                 'section_key'       => 'lab_solutions_section_4',
                 'page_name'         => 'lab solutions',
                 'page_id'           => $page->id,
-                'title'             => 'After Sales Services',
-                'text'              => 'Kafou Medical has a team of trained Engineers to provide quality installation, maintenance, service and training locally in the Kingdom of Saudi Arabia. We address all customer requirements with utmost care and resolve them as quickly as possible.',
+                'title'             => 'LAB Solutions Consumables',
+                'text'              => 'With its variety of IVF trusted brands consumables and wide range of available stock, Kafou Medical has been one of the healthcare facilities preferred partners providing adequate and timely healthcare support.',
                 'order'             => 4,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,
             ],
-
-            // 5. LAB Solutions Consumables
             [
                 'section_key'       => 'lab_solutions_section_5',
                 'page_name'         => 'lab solutions',
                 'page_id'           => $page->id,
-                'title'             => 'LAB Solutions Consumables',
-                'text'              => 'With its variety of IVF trusted brands consumables and wide range of available stock, Kafou Medical has been one of the healthcare facilities preferred partners providing adequate and timely healthcare support.',
-                'order'             => 5,
-                'is_deleted'        => 0,
-                'showing_user'      => 1,
-                'showing_admin'     => 1,
-            ],
-
-            // 6. LAB Solutions Genetics
-            [
-                'section_key'       => 'lab_solutions_section_6',
-                'page_name'         => 'lab solutions',
-                'page_id'           => $page->id,
                 'title'             => 'LAB Solutions Genetics',
                 'text'              => 'Kafou Medical is a major player in the Genetics Laboratories market in the Kingdom of Saudi Arabia providing a wide range of top brands Labs products and solutions.',
-                'order'             => 6,
+                'order'             => 5,
                 'is_deleted'        => 0,
                 'showing_user'      => 1,
                 'showing_admin'     => 1,

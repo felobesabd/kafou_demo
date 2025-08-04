@@ -15,8 +15,8 @@
 
     @foreach($sections as $section)
         @switch($section->section_key)
-            @case('lab_solutions_section_1')
-                {{-- Welcome Video Section --}}
+            {{--@case('lab_solutions_section_1')
+                --}}{{-- Welcome Video Section --}}{{--
                 <div class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
@@ -28,9 +28,9 @@
                         {!! $section->text !!}
                     </div>
                 </div>
-                @break
+                @break--}}
 
-            @case('lab_solutions_section_2')
+            @case('lab_solutions_section_1')
                 {{-- IVF Lab Equipment and Disposables --}}
                 <div class="scrollify main-section split-section equipment divisions-general">
                     <div class="text-content">
@@ -50,7 +50,7 @@
                 </div>
                 @break
 
-            @case('lab_solutions_section_3')
+            @case('lab_solutions_section_2')
                 {{-- IVF Turnkey Projects --}}
                 <div class="scrollify main-section split-section turnkey divisions-general">
                     <div class="text-content">
@@ -70,7 +70,7 @@
                 </div>
                 @break
 
-            @case('lab_solutions_section_4')
+            @case('lab_solutions_section_3')
                 {{-- After Sales Services --}}
                 <div class="scrollify main-section split-section consumables divisions-general">
                     <div class="text-content">
@@ -90,7 +90,7 @@
                 </div>
                 @break
 
-            @case('lab_solutions_section_5')
+            @case('lab_solutions_section_4')
                 {{-- LAB Solutions Consumables --}}
                 <div class="scrollify main-section split-section consumables divisions-general">
                     <div class="text-content">
@@ -110,7 +110,7 @@
                 </div>
                 @break
 
-            @case('lab_solutions_section_6')
+            @case('lab_solutions_section_5')
                 {{-- LAB Solutions Genetics --}}
                 <div class="scrollify main-section split-section genetics divisions-general">
                     <div class="text-content">
