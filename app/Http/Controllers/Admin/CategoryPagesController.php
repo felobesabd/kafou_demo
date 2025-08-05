@@ -34,6 +34,7 @@ class CategoryPagesController extends Controller
 
     public function updateKey(Request $request, $key_id)
     {
+        // dd($request);
         $key = PageContent::findOrFail($key_id);
 
         if ($key->is_image == 1) {
@@ -49,6 +50,21 @@ class CategoryPagesController extends Controller
                 $imagePaths = $decoded;
             } elseif (is_string($old) && !empty($old)) {
                 $imagePaths = [$old];
+            }
+
+            // Process deletions if any
+            if ($request->has('delete_images')) {
+                $imagesToDelete = $request->input('delete_images');
+
+                // Filter out images marked for deletion
+                $imagePaths = array_filter($imagePaths, function($image) use ($imagesToDelete) {
+                    // Handle both simple paths and array structures
+                    $path = is_array($image) ? $image['path'] : $image;
+                    return !in_array($path, $imagesToDelete);
+                });
+
+                // Reset array keys if needed
+                $imagePaths = array_values($imagePaths);
             }
 
             // If new images are uploaded, append them

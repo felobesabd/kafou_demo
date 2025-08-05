@@ -16,13 +16,34 @@
     </style>
 
     @php
-        $sections = \App\Helpers\PageContentHelper::getAllSections();
+        $sections = \App\Helpers\PageContentHelper::getSectionByPageName('anesthesia');
     @endphp
 
     @foreach($sections as $section)
-        @switch($section->section_key)
-            {{--@case('anesthesia_section_1')
-                --}}{{--Welcome Section --}}{{--
+        <div class="scrollify main-section split-section divisions-general">
+            <div class="text-content">
+                <h2 class="section-title" style="margin-bottom:0;">
+                    {{ $section->title ?? "General Anesthesia" }}
+                </h2>
+
+                <p class="section-description">
+                    {!! $section->text ?? "Laryngoscope Airway Management Endotracheal tubes (ETT) Laryngeal Mask Airways (LMA) Nasal cannulas Syringe IV catheters Intravenous (IV) administration sets Pulse oximeters Electrocardiogram (ECG) electrodes Blood pressure cuffs Surgical drapes Yankeur suction catheters Sterile gloves" !!}
+                </p>
+            </div>
+
+            <div class="media-content"
+                 style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+            </div>
+        </div>
+    @endforeach
+
+    {{--@switch($section->section_key)
+            --}}{{--@case('anesthesia_section_1')
+                --}}{{----}}{{--Welcome Section --}}{{----}}{{--
                 <div class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
@@ -34,10 +55,10 @@
                         {!! $section->text !!}
                     </h3>
                 </div>
-                @break--}}
+                @break--}}{{--
 
             @case('anesthesia_section_1')
-                {{--Why Kafou Section --}}
+                --}}{{--Why Kafou Section --}}{{--
                 <div class="scrollify main-section split-section divisions-general">
                     <div class="text-content">
                         <h2 class="section-title" style="margin-bottom:0;">
@@ -105,8 +126,7 @@
                     </div>
                 </div>
                 @break
-        @endswitch
-    @endforeach
+        @endswitch--}}
 
     {{--<div class="scrollify main-section split-section anesthesia divisions-general">
         <div class="text-content">

@@ -10,47 +10,64 @@
 
 @section('content')
     @php
-        $sections = \App\Helpers\PageContentHelper::getAllSections();
+        $sections = \App\Helpers\PageContentHelper::getSectionByPageName('sleep_disorders');
     @endphp
 
     @foreach($sections as $section)
-        @switch($section->section_key)
-            {{--@case('sleep_disorders_section_1')
-                --}}{{-- Welcome Video Section --}}{{--
-                <div class="scrollify main-section fullscreen-section">
-                    <div class="overlay" style="background-color: rgb(75 75 75 / 31%);"></div>
-                    <video autoplay muted loop playsinline>
-                        <source src="{{ $section->is_video ? asset($section->is_video) : asset('assets/videos/sleep&disorders.mp4') }}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <h2>{!! $section->title !!}</h2>
-                    <div>
-                        {!! $section->text !!}
-                    </div>
+        <div class="scrollify main-section split-section sleep-disorders divisions-general">
+            <div class="text-content">
+                <h2 class="section-title">
+                    {{ $section->title ?? "Sleep Disorders" }}
+                </h2>
+                <div class="section-description">
+                    {!! $section->text ?? '<p>Sleep disorders are conditions that disrupt your normal sleep patterns in a way that interferes with your daytime functioning. There are over 80 different types of sleep disorders.</p>' !!}
                 </div>
-                @break--}}
-
-            @case('sleep_disorders_section_1')
-                {{-- Sleep Disorders Main Section --}}
-                <div class="scrollify main-section split-section sleep-disorders divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "Sleep Disorders" }}
-                        </h2>
-                        <div class="section-description">
-                            {!! $section->text ?? '<p>Sleep disorders are conditions that disrupt your normal sleep patterns in a way that interferes with your daytime functioning. There are over 80 different types of sleep disorders.</p>' !!}
-                        </div>
-                    </div>
-                    <div class="media-content"
-                         style="background-image: url('{{ asset($section->is_image ?? 'Uploads/Divisions/sleep_disorders.jpg') }}');
+            </div>
+            <div class="media-content"
+                 style="background-image: url('{{ asset($section->is_image ?? 'Uploads/Divisions/sleep_disorders.jpg') }}');
                          background-repeat: no-repeat;
                          background-size: cover;
                          background-position: center;">
+            </div>
+        </div>
+    @endforeach
+
+    {{--@switch($section->section_key)
+        --}}{{--@case('sleep_disorders_section_1')
+            --}}{{----}}{{-- Welcome Video Section --}}{{----}}{{--
+            <div class="scrollify main-section fullscreen-section">
+                <div class="overlay" style="background-color: rgb(75 75 75 / 31%);"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="{{ $section->is_video ? asset($section->is_video) : asset('assets/videos/sleep&disorders.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2>{!! $section->title !!}</h2>
+                <div>
+                    {!! $section->text !!}
+                </div>
+            </div>
+            @break--}}{{--
+
+        @case('sleep_disorders_section_1')
+            --}}{{-- Sleep Disorders Main Section --}}{{--
+            <div class="scrollify main-section split-section sleep-disorders divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "Sleep Disorders" }}
+                    </h2>
+                    <div class="section-description">
+                        {!! $section->text ?? '<p>Sleep disorders are conditions that disrupt your normal sleep patterns in a way that interferes with your daytime functioning. There are over 80 different types of sleep disorders.</p>' !!}
                     </div>
                 </div>
-                @break
-        @endswitch
-    @endforeach
+                <div class="media-content"
+                     style="background-image: url('{{ asset($section->is_image ?? 'Uploads/Divisions/sleep_disorders.jpg') }}');
+                         background-repeat: no-repeat;
+                         background-size: cover;
+                         background-position: center;">
+                </div>
+            </div>
+            @break
+    @endswitch--}}
 
     {{--<div class="scrollify main-section split-section sleep-disorders divisions-general">
         <div class="text-content">

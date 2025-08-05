@@ -113,4 +113,12 @@ class PageContentHelper
             ->orderBy('order')
             ->get();
     }
+
+    public static function getSectionByPageName($pageName)
+    {
+        return $section = Section::where('page_name', $pageName)
+            ->where('is_deleted', '=', 0)
+            ->orderBy('order')
+            ->get();
+    }
 }

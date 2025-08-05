@@ -16,253 +16,277 @@
     </style>
 
     @php
-        $sections = \App\Helpers\PageContentHelper::getAllSections();
+        $sections = \App\Helpers\PageContentHelper::getSectionByPageName('why kafou');
     @endphp
 
     @foreach($sections as $section)
-        @switch($section->section_key)
-            @case('why_kafou_section_1')
-                {{--Welcome Section --}}
-                <div class="scrollify main-section fullscreen-section why-kafou-page">
-                    <div class="overlay"></div>
-                    <video autoplay muted loop playsinline>
-                        <source src="{{ asset($section->is_video) ?? asset('assets/videos/medical_3.mp4') }}"
-                                type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="row">
-                        <div>
-                            <h3 class="section-title" style="font-size: 25px;">
-                                {{ $section->title ?? "Why Kafou Medical?" }}
-                            </h3>
-                            <div class="welcome-title">
-                                {!! $section->text ?? "Kafou Medical is very committed in fair business
-                                practices and we are fully aware of the importance that behaving fairly will
-                                reflect on our partners reputation." !!}
-                            </div>
+        <div class="scrollify main-section split-section divisions-general">
+            <div class="text-content">
+                <h2 class="section-title">
+                    {{ $section->title ?? "Our Expertise in Your Hands" }}
+                </h2>
+
+                <p class="section-description">
+                    {!! $section->text ?? "Innovative products such as yours require the collaboration
+                    of an experienced partner who knows how to deal with Technical Specifications and
+                    International Standards. Knowing the client's standards and requirements is
+                    something you can only learn with direct experience in the field. We can provide
+                    you the know-how in the market for the most highly demanding clients of
+                    the Kingdom." !!}
+                </p>
+            </div>
+
+            <div class="media-content"
+                 style="
+                            background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;">
+            </div>
+        </div>
+    @endforeach
+
+    {{--@switch($section->section_key)
+        @case('why_kafou_section_1')
+            --}}{{--Welcome Section --}}{{--
+            <div class="scrollify main-section fullscreen-section why-kafou-page">
+                <div class="overlay"></div>
+                <video autoplay muted loop playsinline>
+                    <source src="{{ asset($section->is_video) ?? asset('assets/videos/medical_3.mp4') }}"
+                            type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="row">
+                    <div>
+                        <h3 class="section-title" style="font-size: 25px;">
+                            {{ $section->title ?? "Why Kafou Medical?" }}
+                        </h3>
+                        <div class="welcome-title">
+                            {!! $section->text ?? "Kafou Medical is very committed in fair business
+                            practices and we are fully aware of the importance that behaving fairly will
+                            reflect on our partners reputation." !!}
                         </div>
                     </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_2')
-                {{--Why Kafou Section --}}
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "Our Expertise in Your Hands" }}
-                        </h2>
+        @case('why_kafou_section_2')
+            --}}{{--Why Kafou Section --}}{{--
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "Our Expertise in Your Hands" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Innovative products such as yours require the collaboration
-                            of an experienced partner who knows how to deal with Technical Specifications and
-                            International Standards. Knowing the client's standards and requirements is
-                            something you can only learn with direct experience in the field. We can provide
-                            you the know-how in the market for the most highly demanding clients of
-                            the Kingdom." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Innovative products such as yours require the collaboration
+                        of an experienced partner who knows how to deal with Technical Specifications and
+                        International Standards. Knowing the client's standards and requirements is
+                        something you can only learn with direct experience in the field. We can provide
+                        you the know-how in the market for the most highly demanding clients of
+                        the Kingdom." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_3')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "TERRITORIES ACCESS" }}
-                        </h2>
+        @case('why_kafou_section_3')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "TERRITORIES ACCESS" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Wouldn't it be nice to have immediate access to clients all
-                            over Saudi Arabia? You can have direct access to our offices located in the three
-                            main regions of Saudi Arabia (East: Al-Khobar, Central: Riyadh, West: Jeddah)" !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Wouldn't it be nice to have immediate access to clients all
+                        over Saudi Arabia? You can have direct access to our offices located in the three
+                        main regions of Saudi Arabia (East: Al-Khobar, Central: Riyadh, West: Jeddah)" !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_4')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "MARKET ANALYSIS" }}
-                        </h2>
+        @case('why_kafou_section_4')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "MARKET ANALYSIS" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Imagine the benefits of introducing your products in a country
-                            with years of  market knowledge in hands? We can support your business by introducing
-                            you directly to the correct channels and the decision makers. Furthermore, we can provide
-                            you insights of the market strategies for the upcoming years and what to target in the
-                            short term as your possible potentials." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Imagine the benefits of introducing your products in a country
+                        with years of  market knowledge in hands? We can support your business by introducing
+                        you directly to the correct channels and the decision makers. Furthermore, we can provide
+                        you insights of the market strategies for the upcoming years and what to target in the
+                        short term as your possible potentials." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_5')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "LOCALIZATION" }}
-                        </h2>
+        @case('why_kafou_section_5')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "LOCALIZATION" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Sometimes reaching your goals is possible only through localization
-                            or enhancing the local content which might require a consistent investment in time and in
-                            infrastructure. Kafou Medical can provide you the necessary requirements you need
-                            in order to achieve your goals faster." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Sometimes reaching your goals is possible only through localization
+                        or enhancing the local content which might require a consistent investment in time and in
+                        infrastructure. Kafou Medical can provide you the necessary requirements you need
+                        in order to achieve your goals faster." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_6')
-                <div class="scrollify main-section split-section sfda divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title" style="margin-bottom:5px;">
-                            {{ $section->title ?? "SFDA REGISTRATION" }}
-                        </h2>
+        @case('why_kafou_section_6')
+            <div class="scrollify main-section split-section sfda divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title" style="margin-bottom:5px;">
+                        {{ $section->title ?? "SFDA REGISTRATION" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "According to the Saudi FDA regulations, overseas medical
-                            manufacturers must appoint a local Authorized Representative. The Authorized
-                            Representative will act as a communication channel between the manufacturer and
-                            the Saudi FDA." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "According to the Saudi FDA regulations, overseas medical
+                        manufacturers must appoint a local Authorized Representative. The Authorized
+                        Representative will act as a communication channel between the manufacturer and
+                        the Saudi FDA." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_7')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "REDUCE LEAD TIME" }}
-                        </h2>
+        @case('why_kafou_section_7')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "REDUCE LEAD TIME" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Delivery time is a deal breaker in GCC, we believe Kafou Medical can build smart inventory to reduce delivery time to the minimum." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Delivery time is a deal breaker in GCC, we believe Kafou Medical can build smart inventory to reduce delivery time to the minimum." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_8')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "RELIABILITY" }}
-                        </h2>
+        @case('why_kafou_section_8')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "RELIABILITY" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "With our multinational business partners of different sizes, we know how important it is to have excellent communication capabilities and the flexibility to adapt rapidly to our partners requirements." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "With our multinational business partners of different sizes, we know how important it is to have excellent communication capabilities and the flexibility to adapt rapidly to our partners requirements." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_9')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "INTELLECTUAL PROPERTY" }}
-                        </h2>
+        @case('why_kafou_section_9')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "INTELLECTUAL PROPERTY" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Working hard in R&D to finally innovate a product isn’t a simple operation. It requires perseveration and an uncountable amount of time." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Working hard in R&D to finally innovate a product isn’t a simple operation. It requires perseveration and an uncountable amount of time." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
+            </div>
+            @break
 
-            @case('why_kafou_section_10')
-                <div class="scrollify main-section split-section divisions-general">
-                    <div class="text-content">
-                        <h2 class="section-title">
-                            {{ $section->title ?? "LAWS & REGULATIONS" }}
-                        </h2>
+        @case('why_kafou_section_10')
+            <div class="scrollify main-section split-section divisions-general">
+                <div class="text-content">
+                    <h2 class="section-title">
+                        {{ $section->title ?? "LAWS & REGULATIONS" }}
+                    </h2>
 
-                        <p class="section-description">
-                            {!! $section->text ?? "Entering a new country comes with a burden which is the understanding of a new range of Rules and Regulations which you are not used to." !!}
-                        </p>
-                    </div>
+                    <p class="section-description">
+                        {!! $section->text ?? "Entering a new country comes with a burden which is the understanding of a new range of Rules and Regulations which you are not used to." !!}
+                    </p>
+                </div>
 
-                    <div class="media-content"
-                         style="
+                <div class="media-content"
+                     style="
                             background-image: url('{{ asset($section->is_image ?? 'assets/images/placeholder.jpg') }}');
                             background-repeat: no-repeat;
                             background-size: cover;
                             background-position: center;">
-                    </div>
                 </div>
-                @break
-        @endswitch
-    @endforeach
-
+            </div>
+            @break
+    @endswitch--}}
 
     {{--<!-- Full Screen Video Section -->
     <div class="scrollify main-section fullscreen-section why-kafou-page">

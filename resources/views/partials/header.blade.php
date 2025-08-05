@@ -27,7 +27,7 @@
               </li>
               <li class="menu-item-primary">
                 <a class="nav-item-primary" href="{{ url('/why-kafou') }}">
-                  Why Kafou Medical?
+                    Why Partner with Kafou Medical?
                 </a>
               </li>
               <li class="menu-item-primary">
@@ -79,14 +79,14 @@
               </li>
             </ul>
           </div>
-          <section class="offices">
+          {{--<section class="offices">
             <address>
               <a href="{{ url('/') }}"
                  rel="noopener noreferrer" class="city">
                 Kafou
               </a>
             </address>
-          </section>
+          </section>--}}
         </div>
       </nav>
     </section>

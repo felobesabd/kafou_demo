@@ -56,28 +56,50 @@
                                 }
                             }
                         @endphp
+
                         <div class="mb-3">
                             <label for="images" class="form-label">Upload Images</label>
                             <input type="file" class="form-control @error('images') is-invalid @enderror"
                                    id="images" name="images[]" accept="image/*" multiple>
-                            <div class="form-text">You can upload multiple images. Existing images will remain unless you re-upload.</div>
+                            <div class="form-text">You can upload multiple images. Click the × button to remove images before submitting.</div>
                             @error('images')
                             <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
 
+                        <!-- Existing Images Section -->
                         @if(count($images))
-                        <div class="mb-3">
-                            <label class="form-label">Current Images:</label>
-                            <div class="d-flex flex-wrap gap-2">
-                                @foreach($images as $img)
-                                    <img src="{{ asset('storage/' . $img) }}" style="max-width: 120px; max-height: 80px; border-radius: 8px;">
-                                @endforeach
+                            <div class="mb-3">
+                                <label class="form-label">Current Images:</label>
+                                <div class="d-flex flex-wrap gap-3">
+                                    @foreach($images as $index => $img)
+                                        @php
+                                            $imgPath = is_array($img) ? $img['path'] : $img;
+                                            $imgDesc = is_array($img) ? ($img['description'] ?? '') : '';
+                                        @endphp
+                                        <div class="image-item position-relative" style="width: 150px;">
+                                            <img src="{{ asset('storage/' . $imgPath) }}" class="img-thumbnail" style="width: 100%; height: 100px; object-fit: cover;">
+
+                                            <div class="form-check mt-1">
+                                                <input class="form-check-input" type="checkbox"
+                                                       id="delete_image_{{ $index }}"
+                                                       name="delete_images[]"
+                                                       value="{{ $imgPath }}">
+                                                <label class="form-check-label" for="delete_image_{{ $index }}">
+                                                    Delete
+                                                </label>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div>
                         @endif
 
-                        <div id="image-preview" class="mt-2" style="display: none;"></div>
+                        <!-- Preview Section for New Images -->
+                        <div id="image-preview-container" class="mb-3" style="display: none;">
+                            <label class="form-label">New Images to Upload:</label>
+                            <div id="image-preview" class="d-flex flex-wrap gap-3"></div>
+                        </div>
                     @else
                         <div class="mb-3">
                             <label for="value" class="form-label">Value *</label>
@@ -105,19 +127,7 @@
 </div>
 
 @push('scripts')
-    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#value'), {})
-            .then(editor => {
-                if (editor.sourceElement.labels.length > 0) {
-                    editor.sourceElement.labels[0].addEventListener('click', e => editor.editing.view.focus());
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
+    {{--<script>
         // Image preview functionality
         var imagesInput = document.getElementById('images');
         if (imagesInput) {
@@ -148,6 +158,146 @@
                 }
             });
         }
+    </script>--}}
+
+    {{--<script>
+        // Image preview functionality with description fields
+        var imagesInput = document.getElementById('images');
+        if (imagesInput) {
+            imagesInput.addEventListener('change', function (e) {
+                const files = e.target.files;
+                const previewContainer = document.getElementById('image-preview');
+                previewContainer.innerHTML = ''; // Clear previous previews
+
+                if (files.length > 0) {
+                    previewContainer.style.display = 'block';
+                    previewContainer.classList.add('d-flex', 'flex-wrap', 'gap-3');
+
+                    for (let i = 0; i < files.length; i++) {
+                        const file = files[i];
+                        if (file) {
+                            const reader = new FileReader();
+                            reader.onload = function (e) {
+                                const container = document.createElement('div');
+                                container.className = 'image-item';
+                                container.style.width = '150px';
+
+                                const img = document.createElement('img');
+                                img.src = e.target.result;
+                                img.className = 'img-thumbnail';
+                                img.style.width = '100%';
+                                img.style.height = '100px';
+                                img.style.objectFit = 'cover';
+                                container.appendChild(img);
+
+                                const fileInput = document.createElement('input');
+                                fileInput.type = 'hidden';
+                                fileInput.name = 'new_images[' + i + '][file]';
+                                // We'll handle the file data in the backend
+
+                                previewContainer.appendChild(container);
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                } else {
+                    previewContainer.style.display = 'none';
+                }
+            });
+        }
+    </script>--}}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const imagesInput = document.getElementById('images');
+            const previewContainer = document.getElementById('image-preview');
+            const mainPreviewContainer = document.getElementById('image-preview-container');
+
+            if (imagesInput) {
+                imagesInput.addEventListener('change', function(e) {
+                    previewContainer.innerHTML = ''; // Clear previous previews
+                    const files = e.target.files;
+
+                    if (files.length > 0) {
+                        mainPreviewContainer.style.display = 'block';
+
+                        Array.from(files).forEach((file, index) => {
+                            if (!file.type.match('image.*')) return;
+
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                const itemContainer = document.createElement('div');
+                                itemContainer.className = 'image-item position-relative';
+                                itemContainer.style.width = '150px';
+
+                                // Image thumbnail
+                                const img = document.createElement('img');
+                                img.src = e.target.result;
+                                img.className = 'img-thumbnail';
+                                img.style.width = '100%';
+                                img.style.height = '100px';
+                                img.style.objectFit = 'cover';
+                                itemContainer.appendChild(img);
+
+                                // Hidden file input (we'll handle this differently)
+                                const fileInput = document.createElement('input');
+                                fileInput.type = 'hidden';
+                                fileInput.name = `new_images[${index}][file_index]`;
+                                fileInput.value = index;
+                                itemContainer.appendChild(fileInput);
+
+                                // Remove button
+                                const removeBtn = document.createElement('button');
+                                removeBtn.type = 'button';
+                                removeBtn.className = 'btn btn-danger btn-sm position-absolute';
+                                removeBtn.style.top = '5px';
+                                removeBtn.style.right = '5px';
+                                removeBtn.style.fontSize = '20px';
+                                removeBtn.style.backgroundColor = '#ff0000b0';
+                                removeBtn.style.border = 'none';
+                                removeBtn.innerHTML = '&times;';
+                                removeBtn.onclick = function() {
+                                    removeImagePreview(index);
+                                    itemContainer.remove();
+                                    if (previewContainer.children.length === 0) {
+                                        mainPreviewContainer.style.display = 'none';
+                                    }
+                                };
+                                itemContainer.appendChild(removeBtn);
+
+                                previewContainer.appendChild(itemContainer);
+                            };
+                            reader.readAsDataURL(file);
+                        });
+                    } else {
+                        mainPreviewContainer.style.display = 'none';
+                    }
+                });
+            }
+
+            // Track removed files
+            const removedFiles = new Set();
+
+            function removeImagePreview(index) {
+                removedFiles.add(index);
+                updateFileInput();
+            }
+
+            function updateFileInput() {
+                const input = document.getElementById('images');
+                if (!input) return;
+
+                const files = Array.from(input.files);
+                const newFiles = files.filter((_, index) => !removedFiles.has(index));
+
+                // Create new DataTransfer to update files
+                const dataTransfer = new DataTransfer();
+                newFiles.forEach(file => dataTransfer.items.add(file));
+
+                // Update the file input
+                input.files = dataTransfer.files;
+            }
+        });
     </script>
 @endpush
 @endsection

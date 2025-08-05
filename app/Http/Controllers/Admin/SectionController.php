@@ -29,20 +29,42 @@ class SectionController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request);
+        // dd($request);
 
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'text' => 'required|string',
             'button' => 'nullable|string|max:255',
             'order' => 'required|integer',
+            'section_key' => 'nullable',
+            'page_id' => 'nullable',
+            'page_name' => 'nullable',
+            'is_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:5120',
+            'is_video' => 'nullable|mimes:mp4,mov,ogg,webm|max:20480',
         ]);
 
         // $page = CategoryPage::findOrFail($validated['page_id']);
         // $validated['section_key'] = 'section_' . $validated['order'];
         // $validated['page_name'] = strtolower($page->name);
+
+        // Handle featured image upload
+        if ($request->hasFile('is_image')) {
+            $image = $request->file('is_image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+            $validated['is_image'] = 'storage/images/' . $imageName;
+        }
+
+        // Save video if uploaded
+        if ($request->hasFile('is_video')) {
+            $video = $request->file('is_video');
+            $videoName = time() . '.' . $video->getClientOriginalExtension();
+            $video->storeAs('public/videos', $videoName);
+            $validated['is_video'] = 'storage/videos/' . $videoName;
+        }
+
         Section::create($validated);
-        return redirect()->route('admin.sections.index')->with('success', 'Section created successfully.');
+        return redirect()->route('admin.get.sections.by.page', $request->page_id)->with('success', 'Section created successfully.');
     }
 
     public function edit(Section $section)
@@ -88,7 +110,7 @@ class SectionController extends Controller
         $section->update([
             'is_deleted' => 1
         ]);
-        return redirect()->route('admin.sections.index')->with('success', 'Section deleted successfully.');
+        return redirect()->route('admin.get.sections.by.page', $section->page_id)->with('success', 'Section deleted successfully.');
     }
 
     public function getAllSectionsByPageId($page_id)
