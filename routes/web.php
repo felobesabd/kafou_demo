@@ -76,6 +76,10 @@ Route::get('/our-partners', function () {
     return view('front.our_partners');
 })->name('front.our_partners');
 
+Route::get('/our-clients', function () {
+    return view('front.our_clients');
+})->name('front.our_clients');
+
 // Authentication routes
 Auth::routes();
 

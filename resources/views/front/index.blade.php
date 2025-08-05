@@ -257,7 +257,7 @@
                         <div class="row align-items-center">
                             <div class="carousel-text">
                                 <h2 class="carousel-title">{!! strip_tags($keys['our_clients_title'] ?? 'Our Clients', '<b><i><span><strong><em>') !!}</h2>
-                                <a href="#" class="cta-button">
+                                <a href="{{ route('front.our_clients') }}" class="cta-button">
                                     {!! strip_tags($keys['our_clients_button'] ?? 'View More', '<b><i><span><strong><em>') !!}
                                 </a>
                             </div>
@@ -297,7 +297,7 @@
                 <div class="scrollify main-section red-split-section main-section-green">
                     <!-- Mobile layout -->
                     <div class="logo-mobile-center d-md-none text-center pt-4">
-                        <img class="img-fluid" src="assets/images/career_6.psd" alt="Careers Image" style="max-width: 90px;">
+                        <img class="img-fluid" src="assets/images/career_6.jpg" alt="Careers Image" style="max-width: 90px;">
                     </div>
 
                     <div class="mobile-bottom-content careers-buttons d-md-none">
@@ -317,7 +317,7 @@
 
                     <div class="media-content-red d-none d-md-block">
                         <div class="logo-wrapper">
-                            <img class="img-fluid" src="assets/images/career_6.psd" alt="Careers Image" />
+                            <img class="img-fluid" src="assets/images/career_6.jpg" alt="Careers Image" />
                         </div>
                     </div>
                 </div>

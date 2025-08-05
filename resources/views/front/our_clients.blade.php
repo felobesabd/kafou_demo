@@ -10,17 +10,16 @@
 @section('content')
     @php
         $keys = \App\Helpers\PageContentHelper::getPageContent('home');
-        $partnersImages = [];
-
+        $clientsImages = [];
         foreach ($keys as $key => $value) {
-            if (strpos($key, 'our_partners_images') !== false) {
+            if (strpos($key, 'our_clients_images') !== false) {
                 $decoded = json_decode($value, true);
                 if (is_array($decoded)) {
                     foreach ($decoded as $img) {
-                        $partnersImages[] = $img;
+                        $clientsImages[] = $img;
                     }
                 } else {
-                    $partnersImages[] = $value;
+                    $clientsImages[] = $value;
                 }
             }
         }
@@ -32,18 +31,18 @@
     {{-- Main intro section --}}
     <div class="scrollify main-section flex-center">
         <div class="section-content">
-            <h1 class="section-title">Our Partners</h1>
+            <h1 class="section-title">Our Clients</h1>
         </div>
         <div class="scroll-indicator-container">
             <a href="#partnersContainer" class="scroll-indicator">
-                ↓ Scroll to explore our partners
+                ↓ Scroll to explore our clients
             </a>
         </div>
     </div>
 
     {{-- Hidden data for JavaScript --}}
     <script type="application/json" id="partnersData">
-        {!! json_encode($partnersImages) !!}
+        {!! json_encode($clientsImages) !!}
     </script>
 
     <script type="text/javascript">
