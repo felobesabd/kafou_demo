@@ -85,7 +85,7 @@
                         <th>Page Name</th>
                         <th>Image</th>
                         <th>Video</th>
-                        <th>Section</th>
+                        {{--<th>Section</th>--}}
                         <th>Order</th>
                         <th class="text-end">Action</th>
                     </tr>
@@ -116,11 +116,11 @@
                                     <span class="text-muted">No video</span>
                                 @endif
                             </td>
-                            <td>
+                            {{--<td>
                                 <div class="fw-bold">
                                     {{ ucwords(str_replace('_', ' ', $section->section_key)) }}
                                 </div>
-                            </td>
+                            </td>--}}
                             <td>{{ $section->order }}</td>
                             <td class="text-end">
                                 <a href="{{ route('admin.sections.edit', $section) }}" class="btn btn-sm btn-outline-primary" title="Edit">
