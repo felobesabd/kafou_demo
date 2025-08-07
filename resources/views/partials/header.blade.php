@@ -36,17 +36,17 @@
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="#">
+                <a class="nav-item-primary" href="{{ route('front.our_partners') }}">
                   Our Partners
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="#">
+                <a class="nav-item-primary" href="{{ route('front.our_clients') }}">
                   Our Clients
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="#">
+                <a class="nav-item-primary" href="{{ route('front.ethics_compliance') }}">
                   Ethics & Compliance
                 </a>
               </li>
@@ -58,17 +58,18 @@
                 </a>
               </li>--}}
               <li class="menu-item-secondary">
-                <a class="nav-item-secondary" href="#" target="_blank" rel="noopener noreferrer">
+                <a class="nav-item-secondary" href="https://kafougroup.zohorecruit.com/jobs/kafoumedical"
+                   target="_blank" rel="noopener noreferrer">
                   Job Openings
                 </a>
               </li>
               <li class="menu-item-secondary">
-                <a class="nav-item-secondary" href="#">
+                <a class="nav-item-secondary" href="{{ route('front.direct_apply') }}">
                   Direct Apply
                 </a>
               </li>
               <li class="menu-item-secondary">
-                <a class="nav-item-secondary" href="#">
+                <a class="nav-item-secondary" href="{{ route('front.contact_us') }}">
                   Contact Us
                 </a>
               </li>
