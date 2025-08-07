@@ -31,7 +31,7 @@
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="{{ route('division.anesthesia') }}">
+                <a class="nav-item-primary" href="{{ url('/#anesthesia-section') }}">
                   Divisions
                 </a>
               </li>

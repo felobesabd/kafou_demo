@@ -98,7 +98,7 @@
                  @break
 
             @case('section_3')
-                <div class="scrollify main-section fullscreen-section">
+                <div id="anesthesia-section" class="scrollify main-section fullscreen-section">
                     <div class="overlay"></div>
                     <video autoplay muted loop playsinline>
                         <source src="{{ asset('assets/videos/anesthsia.mp4') }}" type="video/mp4">
@@ -297,11 +297,11 @@
                 <div class="scrollify main-section red-split-section main-section-green">
                     <!-- Mobile layout -->
                     <div class="logo-mobile-center d-md-none text-center pt-4">
-                        <img class="img-fluid" src="assets/images/career_6.jpg" alt="Careers Image" style="max-width: 90px;">
+                        <img class="img-fluid" src="assets/images/careers_7.png" alt="Careers Image" style="max-width: 90px;">
                     </div>
 
                     <div class="mobile-bottom-content careers-buttons d-md-none">
-                        <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" class="cta-button text-dark">Job Openings</a>
+                        <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" target="_blank" class="cta-button text-dark">Job Openings</a>
                         <a href="{{ route('front.direct_apply') }}" class="cta-button text-dark">Direct Apply</a>
                     </div>
 
@@ -310,14 +310,14 @@
                         <h2 class="section-title">Careers</h2>
 
                         <div class="careers-buttons">
-                            <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" class="cta-button text-dark">Job Openings</a>
+                            <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" target="_blank" class="cta-button text-dark">Job Openings</a>
                             <a href="{{ route('front.direct_apply') }}" class="cta-button text-dark">Direct Apply</a>
                         </div>
                     </div>
 
                     <div class="media-content-red d-none d-md-block">
                         <div class="logo-wrapper">
-                            <img class="img-fluid" src="assets/images/career_6.jpg" alt="Careers Image" />
+                            <img class="img-fluid" src="assets/images/careers_7.png" alt="Careers Image" />
                         </div>
                     </div>
                 </div>

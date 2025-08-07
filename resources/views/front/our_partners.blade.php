@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     {{-- Main intro section --}}
-    <div class="scrollify main-section flex-center">
+    {{--<div class="scrollify main-section flex-center">
         <div class="section-content">
             <h1 class="section-title">Our Partners</h1>
         </div>
@@ -39,7 +39,7 @@
                 ↓ Scroll to explore our partners
             </a>
         </div>
-    </div>
+    </div>--}}
 
     {{-- Hidden data for JavaScript --}}
     <script type="application/json" id="partnersData">

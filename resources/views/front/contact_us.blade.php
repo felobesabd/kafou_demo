@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-    <title>Divisions Anesthesia</title>
+    <title>Contact Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
@@ -10,7 +10,11 @@
 
 @section('content')
     <div class="scrollify main-section contact-us">
-        <div class="iframe-contact-us">
+        <div>
+            <iframe aria-label='Contact Us' frameborder="0" style="height:100vh;width:99%;border:none;" src='https://forms.zohopublic.com/alashgar/form/KafouMedicalNewLead/formperma/BV9UQXU13OM1Y8Y4CKvCiwqcOTP3rKKf52_jAIPRB4Y'></iframe>
+        </div>
+
+        {{--<div class="iframe-contact-us">
             <iframe style="height:100%;width:100%;border:none;"
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14487.795108506658!2d46.66912698990479!3d24.797207452996744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc09aaf05318ccdd6!2sKafou%20Group!5e0!3m2!1sen!2ssa!4v1587068864244!5m2!1sen!2ssa"
                     frameborder="0"
@@ -55,6 +59,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>--}}
     </div>
 @endsection

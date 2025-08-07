@@ -13,7 +13,7 @@
                 </h5>
             </div>
             <div class="col-md-6 text-end">
-                @if($sections->isNotEmpty() && in_array($sections->first()->page_name, ['anesthesia', 'surgery', 'lab solutions', 'respiratory', 'nursing_icu', 'sleep_disorders', 'why kafou']))
+                @if($sections->isNotEmpty() && in_array($sections->first()->page_name, ['anesthesia', 'surgery', 'lab solutions', 'respiratory', 'nursing_icu', 'sleep_disorders', 'why kafou', 'ethics and compliance']))
                     <a href="{{ route('admin.sections.create') }}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> Add Section
                     </a>
@@ -126,7 +126,7 @@
                                 <a href="{{ route('admin.sections.edit', $section) }}" class="btn btn-sm btn-outline-primary" title="Edit">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                @if($sections->isNotEmpty() && in_array($sections->first()->page_name, ['anesthesia', 'surgery', 'lab solutions', 'respiratory', 'nursing_icu', 'sleep_disorders', 'why kafou']))
+                                @if($sections->isNotEmpty() && in_array($sections->first()->page_name, ['anesthesia', 'surgery', 'lab solutions', 'respiratory', 'nursing_icu', 'sleep_disorders', 'why kafou', 'ethics and compliance']))
                                 <form action="{{ route('admin.sections.destroy', $section) }}" method="POST" class="d-inline" onsubmit="return confirm('Delete this section?');">
                                         @csrf
                                         @method('DELETE')

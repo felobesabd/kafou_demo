@@ -972,6 +972,12 @@ body.menu-open {
     color: #fff;
 }
 
+.social-link svg {
+    width: 20px;
+    height: 20px;
+    fill: black;
+}
+
 .footer-links {
     list-style: none;
     padding: 0;
@@ -1014,7 +1020,7 @@ body.menu-open {
 }
 
 .contact-info a {
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
