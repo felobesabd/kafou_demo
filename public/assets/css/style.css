@@ -242,3 +242,155 @@
         font-size: 2rem;
     }
 }
+
+.direct-link {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 25%);
+}
+
+.scrollify.main-section.contact-us {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.iframe-contact-us {
+    height: 50vh;
+    width: 100%;
+}
+
+.iframe-contact-us iframe {
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.contact-container {
+    height: 50vh;
+    width: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-cards-wrapper {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+    justify-content: center;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    max-width: 300px;
+    min-width: 250px;
+    transition: 0.5s ease-in-out all;
+}
+
+.contact-card:hover {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 24px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.icon-contact {
+    color: green;
+    font-size: 40px;
+}
+
+.contact-title {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.contact-info {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-info a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #20B2AA;
+}
+
+@media (max-width: 768px) {
+    .contact-cards-wrapper {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .contact-card {
+        padding: 20px 15px;
+        min-width: 200px;
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .contact-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-cards-wrapper {
+        gap: 10px;
+    }
+
+    .contact-card {
+        padding: 15px 10px;
+        min-width: 180px;
+        max-width: 300px;
+    }
+
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .icon-contact {
+        font-size: 30px;
+    }
+
+    .contact-title {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .contact-info {
+        font-size: 12px;
+    }
+}

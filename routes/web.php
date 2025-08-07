@@ -72,6 +72,10 @@ Route::get('/contact-us', function () {
     return view('front.contact_us');
 })->name('front.contact_us');
 
+Route::get('/direct-apply', function () {
+    return view('front.direct_apply');
+})->name('front.direct_apply');
+
 Route::get('/our-partners', function () {
     return view('front.our_partners');
 })->name('front.our_partners');

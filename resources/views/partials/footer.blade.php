@@ -18,10 +18,10 @@
               <h3>Kafou Medical</h3>
               <ul class="footer-links">
                 <li><a href="{{ route('front.why_kafou') }}">Why Kafou Medical?</a></li>
-                <li><a href="#">Our Partners</a></li>
-                <li><a href="#">Our Clients</a></li>
-                <li><a href="#">Job Openings</a></li>
-                <li><a href="#">Direct Apply</a></li>
+                <li><a href="{{ route('front.our_partners') }}">Our Partners</a></li>
+                <li><a href="{{ route('front.our_clients') }}">Our Clients</a></li>
+                <li><a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical">Job Openings</a></li>
+                <li><a href="{{ route('front.direct_apply') }}">Direct Apply</a></li>
                 <li><a href="{{ route('front.contact_us') }}">Contact Us</a></li>
               </ul>
             </div>
@@ -31,12 +31,13 @@
             <div class="footer-column">
               <h3>Kafou Group</h3>
               <ul class="footer-links">
-                <li><a href="#">Kafou Commercial Investment Co.</a></li>
-                <li><a href="#">Kafou Corporation</a></li>
-                <li><a href="#">Kafou Development Co</a></li>
-                <li><a href="#">Diwan Al Rawnaq Co</a></li>
-                <li><a href="#">Kafou Technical Services Co. Ltd</a></li>
-                <li><a href="#">Kafou Dent</a></li>
+                <li><a href="https://kafougroup.com/">Kafou Commercial Investment Co.</a></li>
+                <li><a href="https://kafougroup.com/">Kafou Corporation</a></li>
+                <li><a href="https://kafougroup.com/">Kafou Development Co</a></li>
+                <li><a href="https://drcsa.com">Diwan Al Rawnaq Co</a></li>
+                <li><a href="https://www.ktsco.com.sa">Kafou Technical Services Co. Ltd</a></li>
+                <li><a href="https://kafoudent.com">Kafou Dent</a></li>
+                <li><a href="https://kafouenergy.com">Kafou Energy</a></li>
               </ul>
             </div>
           </div>
