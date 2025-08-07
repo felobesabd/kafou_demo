@@ -46,7 +46,7 @@
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="{{ route('front.ethics_compliance') }}">
+                <a class="nav-item-primary" href="{{ route('ethics_compliance') }}">
                   Ethics & Compliance
                 </a>
               </li>
