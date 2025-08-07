@@ -301,8 +301,8 @@
                     </div>
 
                     <div class="mobile-bottom-content careers-buttons d-md-none">
-                        <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
-                        <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
+                        <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" class="cta-button text-dark">Job Openings</a>
+                        <a href="{{ route('front.direct_apply') }}" class="cta-button text-dark">Direct Apply</a>
                     </div>
 
                     <!-- Desktop layout -->
@@ -310,8 +310,8 @@
                         <h2 class="section-title">Careers</h2>
 
                         <div class="careers-buttons">
-                            <a href="{{ url('/') }}" class="cta-button text-dark">Job Openings</a>
-                            <a href="{{ url('/') }}" class="cta-button text-dark">Direct Apply</a>
+                            <a href="https://kafougroup.zohorecruit.com/jobs/kafoumedical" class="cta-button text-dark">Job Openings</a>
+                            <a href="{{ route('front.direct_apply') }}" class="cta-button text-dark">Direct Apply</a>
                         </div>
                     </div>
 

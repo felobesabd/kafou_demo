@@ -26,12 +26,12 @@
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="{{ url('/why-kafou') }}">
+                <a class="nav-item-primary" href="{{ route('front.why_kafou') }}">
                     Why Partner with Kafou Medical?
                 </a>
               </li>
               <li class="menu-item-primary">
-                <a class="nav-item-primary" href="#">
+                <a class="nav-item-primary" href="{{ route('division.anesthesia') }}">
                   Divisions
                 </a>
               </li>

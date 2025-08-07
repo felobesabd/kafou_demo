@@ -26,14 +26,14 @@
                     {{ $section->title ?? "Our Expertise in Your Hands" }}
                 </h2>
 
-                <p class="section-description">
+                <div class="">
                     {!! $section->text ?? "Innovative products such as yours require the collaboration
                     of an experienced partner who knows how to deal with Technical Specifications and
                     International Standards. Knowing the client's standards and requirements is
                     something you can only learn with direct experience in the field. We can provide
                     you the know-how in the market for the most highly demanding clients of
                     the Kingdom." !!}
-                </p>
+                </div>
             </div>
 
             <div class="media-content"

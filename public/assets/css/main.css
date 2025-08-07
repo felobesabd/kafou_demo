@@ -262,6 +262,21 @@ body.menu-open {
     color: #667eea;
 }
 
+@media (max-width: 768px) {
+    .main-content {
+        padding: 0 30px;
+    }
+
+    .menu-block a {
+        color: #333;
+        text-decoration: none;
+        font-size: 16px;
+        display: block;
+        padding: 2px 0;
+        transition: color 0.3s ease;
+    }
+}
+
 .menu-secondary {
     margin-top: 40px;
     padding-top: 30px;
@@ -519,8 +534,19 @@ body.menu-open {
     }
 
     .split-section .text-content .section-title {
-        font-size: 20px;
+        font-size: 17px;
         margin-top: 20px;
+    }
+
+    .split-section .text-content p {
+        padding: 0 !important;
+        line-height: 16px !important;
+    }
+
+    .split-section .text-content ul {
+        margin: 0;
+        line-height: 16px;
+        letter-spacing: -0.5px;
     }
 
     .split-section .media-content {
